@@ -3,7 +3,7 @@
         <div class="about" slot="left-pane">
             <p class="about-title">About</p>
             <p class="links">
-                <b><a class="github" href="https://github.com/KurozeroPB/Prinz-Eugen" target="_blank"><i class="fab fa-github"></i>&nbsp;View Code on Github</a></b><br/>
+                <b><a class="github" href="https://github.com/KurozeroPB/PrinzEugen" target="_blank"><i class="fab fa-github"></i>&nbsp;View Code on Github</a></b><br/>
                 <b><a class="twitter" href="https://twitter.com/PrinzBot" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Follow on Twitter</a></b><br/>
                 <b><a class="discord" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i>&nbsp;Official Discord server</a></b><br/>
                 <b><a class="paypal" href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal"></i>&nbsp;Support using PayPal</a></b><br/>

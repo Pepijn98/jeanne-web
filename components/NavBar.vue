@@ -5,7 +5,7 @@
             <div class="navbar-brand">
                 <a class="navbar-item is-size-4 has-text-weight-bold" href="/">Prinz Eugen</a>
                 <a class="navbar-item is-size-5-desktop" href="https://twitter.com/PrinzBot" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a class="navbar-item is-size-5-desktop" href="https://github.com/KurozeroPB/Prinz-Eugen" target="_blank"><i class="fab fa-github"></i></a>
+                <a class="navbar-item is-size-5-desktop" href="https://github.com/KurozeroPB/PrinzEugen" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="navbar-item is-size-5-desktop" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i></a>
 
                 <button class="button is-primary navbar-burger" @click="toggleMenu">
