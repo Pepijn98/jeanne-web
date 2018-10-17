@@ -1,0 +1,28 @@
+{
+    "results": [
+        {
+            "title": "Welcome Message",
+            "description": "<code>&lt;prefix&gt;settings welcome &lt;channel&gt; &lt;message&gt;</code><br/><strong>Channel:</strong> Either DM or #channel.<br/><strong>Message:</strong> The messsage to post.<br/><br/><strong>You can add the following placeholders to the message:</strong><br/><code>${SERVER}</code> The name of the server.<br/><code>${USER}</code> The name of the user.<br/><code>${MENTION}</code> Mention the user.<br/><br/> To disable welcome messages do<code>&lt;prefix&gt;settings welcome disable</code>.<br/><br/>"
+        },
+        {
+            "title": "Event Notifications",
+            "description": "<code>&lt;prefix&gt;settings events &lt;channel&gt; &lt;events&gt;</code><br/><strong>Channel:</strong> The #channel to post events in.<br/><strong>Events:</strong> The events to subscribe (+event) or unsubscribe (-event) from.<br/><br/><strong>These are the avaliable events:</strong><br/><code>memberjoined</code> A user joins the server.<br/><code>memberleft</code> A user left the server.<br/><code>userbanned</code> A user was banned.<br/><code>userunbanned</code> A user was unbanned.<br/><code>namechanged</code> A user changed their name.<br/><code>nicknamechanged</code> A user changed their nickname."
+        },
+        {
+            "title": "Command Ignoring",
+            "description": "<code>&lt;prefix&gt;settings ignore (scopes) (commands)</code><br/><strong>Scopes:</strong> Either a @User, #channel, or the server.<br/><strong>Commands:</strong> Either a &lt;prefix&gt;command, cleverbot, &lt;prefix&gt;all of a prefix, or all commands.<br/><br/> Scopes and commands are seperated with a |.<br/> Example: <code>&lt;prefix&gt;settings ignore (@User | @User 2 | #no-bot) (&lt;prefix&gt;all | &lt;prefix&gt;ping | cleverbot)</code><br/> Unignoring works the same way. Just use unignore instead.<br/> If there is only one scope you can ommit the parenthesis."
+        },
+        {
+            "title": "NSFW Channels",
+            "description": "<code>&lt;prefix&gt;settings nsfw &lt;allow/deny&gt;</code><br/> Allow or deny NSFW commands in the channel."
+        },
+        {
+            "title": "Levelup Message",
+            "description": "<code>&lt;prefix&gt;lvlupmessage &lt;enable/disable&gt;</code><br/> Enable or disable the level up message."
+        },
+        {
+            "title": "Checking Settings",
+            "description": "<code>&lt;prefix&gt;settings welcome check</code><br/><code>&lt;prefix&gt;settings events check</code><br/><code>&lt;prefix&gt;settings nsfw check</code><br/><code>&lt;prefix&gt;settings ignored &lt;server|@user|#channel&gt;</code>"
+        }
+    ]
+}

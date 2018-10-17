@@ -1,0 +1,24 @@
+{
+    "results": [
+        {
+            "title": "Levels",
+            "desc": "Earn points by talkin in chat, the more points you get the higher your level will be"
+        },
+        {
+            "title": "Search anime | manga | character",
+            "desc": "Search for your favorite anime, manga or character.</br>It's as simple as <code>!anime azur lane</code>"
+        },
+        {
+            "title": "Catgirls",
+            "desc": "Of course post random cute catgrils because everyone loves catgirls.</br>(Has a sfw and nsfw option)"
+        },
+        {
+            "title": "Cleverbot",
+            "desc": "Have a nice converstion with Prinz"
+        },
+        {
+            "title": "Radio",
+            "desc": "Join a voice channel and listen to listen.moe via Prinz"
+        }
+    ]
+}

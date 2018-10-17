@@ -1,0 +1,147 @@
+<template>
+    <div id="app">
+        <nav-bar></nav-bar>
+        <vue-progress-bar></vue-progress-bar>
+        <div class="container">
+            <div class="header">
+                <img class="avatar" src="../assets/images/avatar.png"/>
+                <span class="h-title">Prinz Eugen | <vue-typer :text="this.$store.state.title" caret-animation="smooth" :typeDelay=120 :preTypeDelay=250 :eraseDelay=120 :preEraseDelay=60000 eraseStyle="backspace"></vue-typer></span>
+            </div>
+            <div class="main">
+                <nuxt/>
+            </div>
+            <div class="ads">
+                <adsbygoogle ad-slot="5372000314"></adsbygoogle>
+            </div>
+        </div>
+        <footer>
+            &copy; 2018 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br/>
+            <a href="https://github.com/KurozeroPB" target="_blank"><i class="fab fa-github"></i>&nbsp;</a>
+            <a href="https://twitter.com/Kurozer0" target="_blank"><i class="fab fa-twitter"></i>&nbsp;</a>
+            <a href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i>&nbsp;</a>
+            <a href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal"></i>&nbsp;</a>
+            <a href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon"></i>&nbsp;</a>
+        </footer>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'Default',
+        data() {
+            return {
+                title: 'Default'
+            }
+        },
+        beforeCreate() {
+            this.$nuxt.$Progress.start();
+        },
+        mounted() {
+            this.$nextTick(async () => {
+                await this.$utils.sleep(500);
+                this.$nuxt.$Progress.finish();
+            });
+
+            const sawAlert = sessionStorage.getItem('sawAlert');
+            if (sawAlert !== 'true')
+                this.$utils.snackbar({
+                    message: 'This website is in early alpha testing, expect alot of stuff to not work!',
+                    type: 'is-warning',
+                    indefinite: true,
+                    onAction: () => sessionStorage.setItem('sawAlert', 'true')
+                });
+        }
+    };
+</script>
+
+<!--suppress SassScssUnresolvedVariable -->
+<style lang="sass">
+    @import "../assets/sass/main.sass"
+    @import "~bulma"
+    @import "~buefy/src/scss/buefy"
+
+    @font-face
+        font-family: Exo
+        src: url(../assets/fonts/exo/Exo2-SemiBold.otf)
+
+    html
+        font-family: 'Exo', sans-serif !important
+        background: $background url("../assets/images/white-carbon.png")
+
+    body
+        font-size: 100%
+        background: transparent
+        font-family: 'Exo', sans-serif !important
+
+    code
+        padding: 0.01em 0.25em
+        background-color: lighten($background-light, 30%)
+
+    span
+        font-family: Exo,serif
+
+    strong
+        color: $text
+
+    #app
+        font-family: 'Exo', sans-serif
+        .fade-enter-active, .fade-leave-active
+            transition: all .2s ease
+        .fade-enter, .fade-leave-active
+            opacity: 0
+        .main
+            max-width: 1280px
+            border: 1px solid $dark
+            margin: 1rem auto auto
+            border-radius: 0
+            padding: 1rem 2rem
+            background-color: $background-light
+            & > div
+                margin: 40px 0
+        & > footer
+            text-align: center
+            font-family: 'Exo', sans-serif
+            margin: 1rem 0 2rem
+
+    .header
+        width: auto
+        margin: 1rem auto auto
+        text-align: center
+        & > .avatar
+            max-width: 100px
+            border: 2px solid $dark
+            vertical-align: middle
+            margin-right: 5px
+        & > .h-title
+            width: auto
+            font-weight: 700
+            font-size: 56px
+            color: $primary
+            vertical-align: middle
+
+    .snackbar
+        &.is-warning
+            background: $warning
+            color: $black
+            & > .action.is-warning > button
+                color: $black !important
+                background-color: $warning !important
+                &:hover
+                    background-color: darken($warning, 5%) !important
+                &:focus
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important
+        &.is-danger
+            background: $danger
+            & > .action.is-danger > button
+                color: $white !important
+                background-color: $danger !important
+                &:hover
+                    background-color: darken($danger, 5%) !important
+                &:focus
+                    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important
+
+    .vue-typer
+        & > span > .custom.char
+            color: $title
+</style>
+
