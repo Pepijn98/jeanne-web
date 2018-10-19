@@ -27,11 +27,11 @@
         },
         head () {
             return {
-                title: `Prinz Eugen | ${this.title}`,
+                title: `Sophie Twilight | ${this.title}`,
                 meta: [
-                    { hid: 'og-title', property: 'og:title', content: `Prinz Eugen | ${this.title}` },
-                    { hid: 'og-url', property: 'og:url', content: `https://prinz-eugen.info/${this.title.toLowerCase()}` },
-                    { hid: 'twitter-title', name: 'twitter:title', content: `Prinz Eugen | ${this.title}` }
+                    { hid: 'og-title', property: 'og:title', content: `Sophie Twilight | ${this.title}` },
+                    { hid: 'og-url', property: 'og:url', content: `https://sophiebot.info/${this.title.toLowerCase()}` },
+                    { hid: 'twitter-title', name: 'twitter:title', content: `Sophie Twilight | ${this.title}` }
                 ]
             }
         },

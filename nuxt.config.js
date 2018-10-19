@@ -4,30 +4,30 @@ const settings = toml.parse(fs.readFileSync('./settings.toml'));
 
 module.exports = {
     head: {
-        title: 'Prinz Eugen',
+        title: 'Sophie Twilight',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'author', name: 'author', content: 'Kurozero' },
-            { hid: 'description', name: 'description', content: 'Prinz Eugen, A feature rich discord bot' },
+            { hid: 'description', name: 'description', content: 'Sophie Twilight, A feature rich discord bot' },
             { hid: 'theme-color', name: 'theme-color', content: '#7A202C' },
             { hid: 'twitter-card', name: 'twitter:card', content: 'summary_large_image' },
-            { hid: 'twitter-site', name: 'twitter:site', content: '@PrinzEugen' },
-            { hid: 'twitter-title', name: 'twitter:title', content: 'Prinz Eugen' },
-            { hid: 'twitter-description', name: 'twitter:description', content: 'Prinz Eugen, A feature rich discord bot' },
-            { hid: 'twitter-image', name: 'twitter:image', content: 'https://prinz-eugen.info/avatar.png' },
+            { hid: 'twitter-site', name: 'twitter:site', content: '@SophieBot' },
+            { hid: 'twitter-title', name: 'twitter:title', content: 'Sophie Twilight' },
+            { hid: 'twitter-description', name: 'twitter:description', content: 'Sophie Twilight, A feature rich discord bot' },
+            { hid: 'twitter-image', name: 'twitter:image', content: 'https://sophiebot.info/avatar.jpg' },
             { hid: 'twitter-creator', name: 'twitter:creator', content: '@Kurozer0' },
-            { hid: 'og-title', property: 'og:title', content: 'Prinz Eugen' },
-            { hid: 'og-url', property: 'og:url', content: 'https://prinz-eugen.info' },
-            { hid: 'og-image', property: 'og:image', content: 'https://prinz-eugen.info/avatar.png' },
+            { hid: 'og-title', property: 'og:title', content: 'Sophie Twilight' },
+            { hid: 'og-url', property: 'og:url', content: 'https://sophiebot.info' },
+            { hid: 'og-image', property: 'og:image', content: 'https://sophiebot.info/avatar.jpg' },
             { hid: 'og-type', property: 'og:type', content: 'website' },
-            { hid: 'og-site_name', property: 'og:site_name', content: 'prinz-eugen.info' },
-            { hid: 'og-description', property: 'og:description', content: 'Prinz Eugen, A feature rich discord bot.' },
+            { hid: 'og-site_name', property: 'og:site_name', content: 'sophiebot.info' },
+            { hid: 'og-description', property: 'og:description', content: 'Sophie Twilight, A feature rich discord bot.' },
             { hid: 'og-locale', property: 'og:locale', content: 'en-US' },
-            { hid: 'application-name', property: 'application-name', content: 'Prinz Eugen' },
+            { hid: 'application-name', property: 'application-name', content: 'Sophie Twilight' },
             { hid: 'fragment', property: 'fragment', content: '!' },
             { hid: 'apple-mobile-web-app-capable', property: 'apple-mobile-web-app-capable', content: 'yes' },
-            { hid: 'msapplication-config', property: 'msapplication-config', content: 'https://prinz-eugen.info/head-icons/browserconfig.xml' }
+            { hid: 'msapplication-config', property: 'msapplication-config', content: 'https://sophiebot.info/head-icons/browserconfig.xml' }
         ],
         link: [
             { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', integrity: 'sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ', crossorigin: 'anonymous' },

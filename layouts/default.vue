@@ -4,8 +4,8 @@
         <vue-progress-bar></vue-progress-bar>
         <div class="container">
             <div class="header">
-                <img class="avatar" src="../assets/images/avatar.png"/>
-                <span class="h-title">Prinz Eugen | <vue-typer :text="this.$store.state.title" caret-animation="smooth" :typeDelay=120 :preTypeDelay=250 :eraseDelay=120 :preEraseDelay=60000 eraseStyle="backspace"></vue-typer></span>
+                <img class="avatar" src="../assets/images/avatar.jpg"/>
+                <span class="h-title">Sophie Twilight | <vue-typer :text="this.$store.state.title" caret-animation="smooth" :typeDelay=120 :preTypeDelay=250 :eraseDelay=120 :preEraseDelay=60000 eraseStyle="backspace"></vue-typer></span>
             </div>
             <div class="main">
                 <nuxt/>

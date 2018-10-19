@@ -1,5 +1,5 @@
 {
-    "name": "Prinz Eugen",
+    "name": "Sophie Twilight",
     "icons": [
         {
             "src": "/head-icons/android-chrome-192x192.jpg",
@@ -12,7 +12,7 @@
             "type": "image/jpg"
         }
     ],
-    "theme_color": "#7A202C",
-    "background_color": "#7A202C",
+    "theme_color": "#BA2F6B",
+    "background_color": "#BA2F6B",
     "display": "standalone"
 }

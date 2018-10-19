@@ -3,8 +3,8 @@
         <div class="about" slot="left-pane">
             <p class="about-title">About</p>
             <p class="links">
-                <b><a class="github" href="https://github.com/KurozeroPB/PrinzEugen" target="_blank"><i class="fab fa-github"></i>&nbsp;View Code on Github</a></b><br/>
-                <b><a class="twitter" href="https://twitter.com/PrinzBot" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Follow on Twitter</a></b><br/>
+                <b><a class="github" href="https://github.com/KurozeroPB/Sophie" target="_blank"><i class="fab fa-github"></i>&nbsp;View Code on Github</a></b><br/>
+                <b><a class="twitter" href="https://twitter.com/SophieBot" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Follow on Twitter</a></b><br/>
                 <b><a class="discord" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i>&nbsp;Official Discord server</a></b><br/>
                 <b><a class="paypal" href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal"></i>&nbsp;Support using PayPal</a></b><br/>
                 <b><a class="patreon" href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon"></i>&nbsp;Support using Patreon</a></b><br/>
@@ -30,11 +30,11 @@
         },
         head() {
             return {
-                title: `Prinz Eugen | ${this.title}`,
+                title: `Sophie Twilight | ${this.title}`,
                 meta: [
-                    { hid: 'og-title', property: 'og:title', content: `Prinz Eugen | ${this.title}` },
-                    { hid: 'og-url', property: 'og:url', content: `https://prinz-eugen.info/${this.title.toLowerCase()}` },
-                    { hid: 'twitter-title', name: 'twitter:title', content: `Prinz Eugen | ${this.title}` }
+                    { hid: 'og-title', property: 'og:title', content: `Sophie Twilight | ${this.title}` },
+                    { hid: 'og-url', property: 'og:url', content: `https://sophiebot.info/${this.title.toLowerCase()}` },
+                    { hid: 'twitter-title', name: 'twitter:title', content: `Sophie Twilight | ${this.title}` }
                 ]
             }
         },
