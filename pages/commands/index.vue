@@ -2,7 +2,15 @@
 <template>
     <div>
         <div class="search-wrapper">
-            <input type="text" v-model="search" placeholder="Search command by name.."/>
+            <b-autocomplete
+                v-model="search"
+                :data="commands"
+                placeholder="Search command by name.."
+                icon="magnify"
+                field="name"
+                @select="(cmd) => selected = cmd">
+                <template slot="empty">No results found</template>
+            </b-autocomplete>
         </div>
         <div class="commands">
             <div v-for="command in commands" :key="command.name" class="card command">
@@ -35,7 +43,8 @@
             return {
                 search: '',
                 cmds: [],
-                title: 'Commands'
+                title: 'Commands',
+                selected: null
             };
         },
         head () {
@@ -50,7 +59,7 @@
         },
         computed: {
             commands() {
-                return this.cmds.filter((cmd) => cmd.name.toLowerCase().includes(this.search.toLowerCase()));
+                return this.cmds.filter((cmd) => cmd.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0);
             }
         },
         async beforeMount() {
@@ -82,21 +91,12 @@
         align-items: flex-start
         margin-bottom: 10px
 
-        input
-            padding: 4px 12px
+        .autocomplete
             color: $text
             border: 1px solid $background
             transition: .15s all ease-in-out
             background: $background-light
             width: 500px
-            &:focus
-                outline: none
-                transform: scale(1.05)
-
-            &::-webkit-input-placeholder
-                font-size: 12px
-                color: $text
-                font-weight: 100
 
     .commands
         display: flex

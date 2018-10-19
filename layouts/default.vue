@@ -83,6 +83,12 @@
     strong
         color: $text
 
+    .input
+        border-radius: 0
+        &:focus,
+        &:active
+            box-shadow: 0 0 0 0 #fff;
+
     #app
         font-family: 'Exo', sans-serif
         .fade-enter-active, .fade-leave-active
