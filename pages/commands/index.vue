@@ -8,12 +8,30 @@
                 placeholder="Search command by name.."
                 icon="magnify"
                 field="name"
-                @select="(cmd) => selected = cmd">
+                @select="(command) => selected = command">
                 <template slot="empty">No results found</template>
             </b-autocomplete>
         </div>
         <div class="commands">
-            <div v-for="command in commands" :key="command.name" class="card command">
+            <div v-if="selected !== null" class="card command">
+                <div class="card-header cmd-title">
+                    <p class="card-header-title cmd-name">j:{{ selected.name }} <span v-if="selected.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
+                    <a v-if="selected.example" class="card-header-icon">
+                        <b-tooltip :label="selected.example ? `j:${selected.name} ${selected.example}` : ''" position="is-left" animated square>
+                            <p class="example">Example</p>
+                        </b-tooltip>
+                    </a>
+                </div>
+                <div class="card-content cmd-description">
+                    <div class="content">{{ selected.description }}</div>
+                </div>
+                <footer class="cmd-details">
+                    <small v-if="selected.usage" class="cmd-details-item">Usage:&nbsp;<code>j:{{ selected.name }} {{ selected.usage }}</code></small>
+                    <small v-if="selected.cooldown" class="cmd-details-item">Cooldown:&nbsp;<strong style="font-size: .64rem;">{{ selected.cooldown }}</strong></small>
+                    <small v-if="selected.aliases" class="cmd-details-item">Aliases: {{ selected.aliases.join(', ') }}</small>
+                </footer>
+            </div>
+            <div v-else v-for="command in commands" :key="command.name" class="card command">
                 <div class="card-header cmd-title">
                     <p class="card-header-title cmd-name">j:{{ command.name }} <span v-if="command.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
                     <a v-if="command.example" class="card-header-icon">
