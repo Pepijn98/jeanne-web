@@ -4,7 +4,7 @@
             <p class="about-title">About</p>
             <p class="links">
                 <b><a class="github" href="https://github.com/KurozeroPB/Sophie" target="_blank"><i class="fab fa-github"></i>&nbsp;View Code on Github</a></b><br/>
-                <b><a class="twitter" href="https://twitter.com/SophieBot" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Follow on Twitter</a></b><br/>
+                <b><a class="twitter" href="https://twitter.com/SophieDiscord" target="_blank"><i class="fab fa-twitter"></i>&nbsp;Follow on Twitter</a></b><br/>
                 <b><a class="discord" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i>&nbsp;Official Discord server</a></b><br/>
                 <b><a class="paypal" href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal"></i>&nbsp;Support using PayPal</a></b><br/>
                 <b><a class="patreon" href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon"></i>&nbsp;Support using Patreon</a></b><br/>
@@ -131,9 +131,7 @@
         text-align: center
         font-size: 18px
         padding: 0 0 8px
-        text-shadow: 1px 1px 1px #000
         & .github
-            text-shadow: .5px .5px .5px #000
             color: #0A0A0A
         & .twitter
             color: #1DA1F2

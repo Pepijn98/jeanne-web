@@ -15,9 +15,9 @@
         <div class="commands">
             <div v-if="selected !== null" class="card command">
                 <div class="card-header cmd-title">
-                    <p class="card-header-title cmd-name">j:{{ selected.name }} <span v-if="selected.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
+                    <p class="card-header-title cmd-name">s/{{ selected.name }} <span v-if="selected.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
                     <a v-if="selected.example" class="card-header-icon">
-                        <b-tooltip :label="selected.example ? `j:${selected.name} ${selected.example}` : ''" position="is-left" animated square>
+                        <b-tooltip :label="selected.example ? `s/${selected.name} ${selected.example}` : ''" position="is-left" animated square>
                             <p class="example">Example</p>
                         </b-tooltip>
                     </a>
@@ -26,16 +26,17 @@
                     <div class="content">{{ selected.description }}</div>
                 </div>
                 <footer class="cmd-details">
-                    <small v-if="selected.usage" class="cmd-details-item">Usage:&nbsp;<code>j:{{ selected.name }} {{ selected.usage }}</code></small>
+                    <small v-if="command.category" class="cmd-details-item">Category:&nbsp;<code>{{ command.category }}</code></small>
+                    <small v-if="selected.usage" class="cmd-details-item">Usage:&nbsp;<code>s/{{ selected.name }} {{ selected.usage }}</code></small>
                     <small v-if="selected.cooldown" class="cmd-details-item">Cooldown:&nbsp;<strong style="font-size: .64rem;">{{ selected.cooldown }}</strong></small>
                     <small v-if="selected.aliases" class="cmd-details-item">Aliases: {{ selected.aliases.join(', ') }}</small>
                 </footer>
             </div>
             <div v-else v-for="command in commands" :key="command.name" class="card command">
                 <div class="card-header cmd-title">
-                    <p class="card-header-title cmd-name">j:{{ command.name }} <span v-if="command.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
+                    <p class="card-header-title cmd-name">s/{{ command.name }} <span v-if="command.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
                     <a v-if="command.example" class="card-header-icon">
-                        <b-tooltip :label="command.example ? `j:${command.name} ${command.example}` : ''" position="is-left" animated square>
+                        <b-tooltip :label="command.example ? `s/${command.name} ${command.example}` : ''" position="is-left" animated square>
                             <p class="example">Example</p>
                         </b-tooltip>
                     </a>
@@ -44,7 +45,8 @@
                     <div class="content">{{ command.description }}</div>
                 </div>
                 <footer class="cmd-details">
-                    <small v-if="command.usage" class="cmd-details-item">Usage:&nbsp;<code>j:{{ command.name }} {{ command.usage }}</code></small>
+                    <small v-if="command.category" class="cmd-details-item">Category:&nbsp;<code>{{ command.category }}</code></small>
+                    <small v-if="command.usage" class="cmd-details-item">Usage:&nbsp;<code>s/{{ command.name }} {{ command.usage }}</code></small>
                     <small v-if="command.cooldown" class="cmd-details-item">Cooldown:&nbsp;<strong style="font-size: .64rem;">{{ command.cooldown }}</strong></small>
                     <small v-if="command.aliases" class="cmd-details-item">Aliases: {{ command.aliases.join(', ') }}</small>
                 </footer>
@@ -126,7 +128,7 @@
             margin: 10px
             background-color: $background
             & > .cmd-title
-                box-shadow: 0 1px 2px $background-light
+                box-shadow: 0 1px 2px $primary
                 & > .cmd-name
                     font-family: Exo, sans-serif
                     font-weight: 500
@@ -136,7 +138,7 @@
                     display: inline-block
                     & > .nsfw-tag
                         background: $danger
-                        color: $text
+                        color: #FFF
                         font-size: 12px
                         vertical-align: middle
                         cursor: pointer
@@ -158,7 +160,7 @@
                 & > .content
                     color: $text
             & > .cmd-details
-                border-top: 1px solid $background-light
+                border-top: 1px solid $primary
                 font-size: 14px
                 & > .cmd-details-item
                     color: $text
@@ -167,5 +169,5 @@
                     flex-basis: 0
                     flex-grow: 1
                     flex-shrink: 0
-                    padding: 0.2rem 0.75rem
+                    padding: 0 0.75rem 0.2rem 0.75rem
 </style>

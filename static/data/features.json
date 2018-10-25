@@ -1,24 +1,28 @@
 {
     "results": [
         {
-            "title": "Levels",
-            "desc": "Earn points by talkin in chat, the more points you get the higher your level will be"
+            "title": "Levels and profile",
+            "desc": "Earn points by talkin in chat, the more points you get the higher your level will be<br/>Personalize your profile card with a custom about text and custom background image"
         },
         {
-            "title": "Search anime | manga | character",
-            "desc": "Search for your favorite anime, manga or character.</br>It's as simple as <code>!anime azur lane</code>"
+            "title": "Search anime | manga",
+            "desc": "Search for your favorite anime or manga.</br>It's as simple as <code>s/anime Tonari no Kyuuketsuki-san</code>"
         },
         {
             "title": "Catgirls",
-            "desc": "Of course post random cute catgrils because everyone loves catgirls.</br>(Has a sfw and nsfw option)"
+            "desc": "Post random cute catgirls because everyone loves catgirls.</br>(Has a sfw and nsfw option)"
         },
         {
             "title": "Cleverbot",
-            "desc": "Have a nice converstion with Prinz"
+            "desc": "Have a fun and nice converstion with Sophie"
         },
         {
-            "title": "Radio",
-            "desc": "Join a voice channel and listen to listen.moe via Prinz"
+            "title": "Advanced settings",
+            "desc": "Personalize levelup and welcome messages, set a custom guild prefix, subscribe to events"
+        },
+        {
+            "title": "Fully rewritten Discord bot",
+            "desc": "Formally known as Jeanne d'Arc, now completely rewritten and redesign.<br/>Some missing commands and features will be added in the upcoming weeks."
         }
     ]
 }

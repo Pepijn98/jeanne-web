@@ -2,16 +2,18 @@
     "results": [
         {
             "name": "8ball",
-            "description": "ya know, 8ball does 8ball things",
+            "category": "fun",
+            "description": "Ask the magic 8 ball",
             "nsfw": false,
-            "usage": "<question>",
+            "usage": "<question: string>",
             "example": "Am I gonna win next week?",
             "cooldown": "5s",
             "aliases": null
         },
         {
-            "name": "9gag",
-            "description": "Sends a random 9gag post",
+            "name": "about",
+            "category": "info",
+            "description": "Shows info about me",
             "nsfw": false,
             "usage": null,
             "example": null,
@@ -19,717 +21,149 @@
             "aliases": null
         },
         {
-            "name": "about",
-            "description": "Tells you about the bot",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": [
-                "info"
-            ]
-        },
-        {
             "name": "aesthetic",
+            "category": "fun",
             "description": "Convert text to aesthetic text",
             "nsfw": false,
-            "usage": "<text>",
+            "usage": "<text: string>",
             "example": "wow this is great",
             "cooldown": "5s",
-            "aliases": [
-                "aes"
-            ]
+            "aliases": ["aes"]
         },
         {
             "name": "anime",
-            "description": "Shows info about an anime",
+            "category": "fun",
+            "description": "SFind information about an anime",
             "nsfw": false,
-            "usage": "<anime_name>",
+            "usage": "<anime_name: string>",
             "example": "darling in the franxx",
             "cooldown": "10s",
             "aliases": null
         },
         {
-            "name": "animelist",
-            "description": "Gets info about your anime list using the following tags <watching/completed/onhold>. (note: completed doesn't return all completed.)",
-            "nsfw": false,
-            "usage": "<watching/completed/onhold>, <mal username>",
-            "example": "watching, Kurozr0",
-            "cooldown": "10s",
-            "aliases": [
-                "mallist",
-                "alist"
-            ]
-        },
-        {
-            "name": "asciicat",
-            "description": "Sends an ascii art cat ;3",
-            "nsfw": false,
-            "usage": "[option] ('list' to view all options)",
-            "example": "list",
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "ass",
-            "description": "Sends a random ass pic.",
+            "name": "butts",
+            "category": "nsfw",
+            "description": "Sends a random butt pic",
             "nsfw": true,
             "usage": null,
             "example": null,
-            "cooldown": "5s",
-            "aliases": [
-                "butts"
-            ]
+            "cooldown": "10s",
+            "aliases": ["ass", "butt"]
         },
         {
             "name": "avatar",
-            "description": "Sends someone's avatar url (The file size can be 128, 256, 512, 1024)",
+            "category": "info",
+            "description": "Get your or someone else's avatar",
             "nsfw": false,
-            "usage": "<-s/--size> <size> OR <username/ID/@username> | <size>",
-            "example": "--size 1024",
+            "usage": "[username: mention|string]",
+            "example": "Kurozero",
             "cooldown": "5s",
-            "aliases": [
-                "ava",
-                "pfp",
-                "avi"
-            ]
+            "aliases": ["ava", "pfp", "avi"]
         },
         {
             "name": "ban",
-            "description": "Ban the mentioned member",
+            "category": "moderation",
+            "description": "Ban a guild member",
             "nsfw": false,
-            "usage": "<username/ID/@username> | [reason]",
-            "example": "@spammer#5461 | spam",
-            "cooldown": "5s",
+            "usage": "<member: mention> [days: number] [reason: string]",
+            "example": "@spammer#5461 3 spam",
+            "cooldown": "0s",
             "aliases": null
         },
         {
             "name": "boobs",
+            "category": "nsfw",
             "description": "Sends a random boobs pic",
             "nsfw": true,
             "usage": null,
             "example": null,
-            "cooldown": "5s",
-            "aliases": [
-                "tits"
-            ]
-        },
-        {
-            "name": "bot",
-            "description": "Get info about a bot from bots.discord.pw",
-            "nsfw": false,
-            "usage": "<bot_id/@mention>",
-            "example": "368525054524260353",
-            "cooldown": "5s",
-            "aliases": null
+            "cooldown": "10s",
+            "aliases": ["tits"]
         },
         {
             "name": "cat",
+            "category": "fun",
             "description": "Sends random cat image from http://random.cat",
             "nsfw": false,
             "usage": null,
             "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "bullshit",
-            "description": "Just bullshit",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "cooldown": "10s",
             "aliases": null
         },
         {
             "name": "catgirl",
-            "description": "Sends a cute catgirl",
+            "category": "fun",
+            "description": "Sends a cute catgirl from https://nekos.moe",
             "nsfw": true,
-            "usage": "<sfw/nsfw>",
+            "usage": "[\"nsfw\"]",
             "example": "nsfw",
             "cooldown": "10s",
-            "aliases": null
-        },
-        {
-            "name": "changelog",
-            "description": "Sends the latest changelog from the support server",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "character",
-            "description": "Search a manga or anime character",
-            "nsfw": false,
-            "usage": "<character_name>",
-            "example": "Himiko Toga",
-            "cooldown": "5s",
-            "aliases": [
-                "char"
-            ]
-        },
-        {
-            "name": "choose",
-            "description": "Makes a choice for you",
-            "nsfw": false,
-            "usage": "<choice> | <choice> [| choice...]",
-            "example": "watch anime | read manga | play games",
-            "cooldown": "5s",
-            "aliases": [
-                "c",
-                "pick",
-                "decide",
-                "choice"
-            ]
+            "aliases": ["catgirls", "neko", "nekos"]
         },
         {
             "name": "channelinfo",
-            "description": "Shows info of the channel this command is used in (only text channels for now)",
+            "category": "info",
+            "description": "Get info about the current channel",
             "nsfw": false,
             "usage": null,
             "example": null,
             "cooldown": "5s",
-            "aliases": [
-                "ci",
-                "cinfo",
-                "channel"
-            ]
+            "aliases": ["channel"]
         },
         {
             "name": "cleverbot",
+            "category": "fun",
             "description": "Chat with the bot",
             "nsfw": false,
-            "usage": "<question>",
+            "usage": "<question: string>",
             "example": "How do you feel today?",
             "cooldown": "5s",
-            "aliases": [
-                "cb"
-            ]
+            "aliases": ["cb"]
         },
         {
-            "name": "coinflip",
-            "description": "Flip a coin",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "1s",
-            "aliases": [
-                "coin",
-                "flip"
-            ]
-        },
-        {
-            "name": "cuddle",
-            "description": "Cuddle with someone",
-            "nsfw": false,
-            "usage": "<username/id/@mention>",
-            "example": "Jeanne d'Arc",
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "currency",
-            "description": "Convert currency",
-            "nsfw": false,
-            "usage": "<value> | <from_currency> | <to_currency>",
-            "example": "10 | EUR | USD",
-            "cooldown": "10s",
-            "aliases": [
-                "cc"
-            ]
-        },
-        {
-            "name": "color",
-            "description": "Previews a random color or a color you give in the args",
-            "nsfw": false,
-            "usage": "<random/#hex_code/rgb(r, g, b,)>",
-            "example": "#FF0000",
-            "cooldown": "5s",
-            "aliases": [
-                "colour"
-            ]
-        },
-        {
-            "name": "cry",
-            "description": "Sends a cry anime character",
+            "name": "guildinfo",
+            "category": "info",
+            "description": "Get info about the guild",
             "nsfw": false,
             "usage": null,
             "example": null,
             "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "danbooru",
-            "description": "Search for images from danbooru",
-            "nsfw": true,
-            "usage": "<search_terms>",
-            "example": "yuri",
-            "cooldown": "5s",
-            "aliases": [
-                "db",
-                "dan"
-            ]
-        },
-        {
-            "name": "ddgsearch",
-            "description": "Gets top 4 results from duckduckgo",
-            "nsfw": false,
-            "usage": "<search_query>",
-            "example": "Is the earth flat?",
-            "cooldown": "5s",
-            "aliases": [
-                "ddg"
-            ]
-        },
-        {
-            "name": "destiny",
-            "description": "Get your destiny account stats",
-            "nsfw": false,
-            "usage": "<xbox/psn> | <username> | <pve/pvp>",
-            "example": "psn | superpepijn007 | pve",
-            "cooldown": "10s",
-            "aliases": null
-        },
-        {
-            "name": "destiny2",
-            "description": "Get destiny 2 character data",
-            "nsfw": false,
-            "usage": "<xbox/psn/blizzard> | <displayname> | <character_number>",
-            "example": "psn | kurozero | 1",
-            "cooldown": "5s",
-            "aliases": [
-                "d2"
-            ]
-        },
-        {
-            "name": "dictonary",
-            "description": "Search the disctonary for a word or use j:dict language to see the available languages",
-            "nsfw": false,
-            "usage": "<lang/\"language\"> | <text>",
-            "example": "en-en | time",
-            "cooldown": "5s",
-            "aliases": [
-                "dict"
-            ]
-        },
-        {
-            "name": "emote",
-            "description": "Sends a random emote the bot has access to",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": [
-                "emoji"
-            ]
-        },
-        {
-            "name": "discriminator",
-            "description": "Shows the first 5 users with the given discriminator",
-            "nsfw": false,
-            "usage": "<guild/global> | <discriminator>",
-            "example": "guild | #0001",
-            "cooldown": "5s",
-            "aliases": [
-                "discrim"
-            ]
-        },
-        {
-            "name": "facerecognition",
-            "description": "Can recognize a face in a picture",
-            "nsfw": false,
-            "usage": "<image_url> (Only .jpg/.jpeg and .png format)",
-            "cooldown": "5s",
-            "aliases": [
-                "facerecog",
-                "fr"
-            ]
-        },
-        {
-            "name": "findinvite",
-            "description": "Get info about a discord invite",
-            "nsfw": false,
-            "usage": "<invite_code>",
-            "example": "p895czC",
-            "cooldown": "5s",
-            "aliases": [
-                "getinvite",
-                "inviteinfo"
-            ]
-        },
-        {
-            "name": "funinsult",
-            "description": "Generate fun insults",
-            "nsfw": false,
-            "usage": "<username | ID | @username>",
-            "example": "Decay",
-            "cooldown": "5s",
-            "aliases": [
-                "finsult"
-            ]
-        },
-        {
-            "name": "fireemblemheroes",
-            "description": "Get stats about a hero or skill",
-            "nsfw": false,
-            "usage": "<hero/skill> | [4/5*]<hero_name/skill_name>",
-            "example": "hero | Anna",
-            "cooldown": "5s",
-            "aliases": [
-                "feh",
-                "fireemblem"
-            ]
-        },
-        {
-            "name": "gelbooru",
-            "description": "Search for images from from gelbooru",
-            "nsfw": true,
-            "usage": "<search_terms>",
-            "example": "incest",
-            "cooldown": "5s",
-            "aliases": [
-                "gb",
-                "gel"
-            ]
-        },
-        {
-            "name": "gif",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "google",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "guild",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "hackban",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "hearthstone",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "howto",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "hug",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "ibsearch",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
+            "aliases": ["serverinfo", "guild", "server"]
         },
         {
             "name": "imdb",
-            "description": "",
+            "category": "fun",
+            "description": "Search for a movie on imdb",
             "nsfw": false,
-            "usage": null,
+            "usage": "<movie|serie: string>",
             "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "insult",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "invite",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "cooldown": "20s",
             "aliases": null
         },
         {
             "name": "kick",
-            "description": "",
+            "category": "moderation",
+            "description": "Kick a guild member",
             "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "kill",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "kiss",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "konachan",
-            "description": "",
-            "nsfw": true,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "league",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "leave",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "leetspeak",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "lenny",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "level",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "lewd",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "lick",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "lmgtfy",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "lvlupmessage",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "usage": "<member: mention> [reason: string]",
+            "example": "@member#0001",
+            "cooldown": "0s",
             "aliases": null
         },
         {
             "name": "manga",
-            "description": "",
+            "category": "fun",
+            "description": "Find information about a manga",
             "nsfw": false,
-            "usage": null,
+            "usage": "<manga_name: string>",
             "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "mariomaker",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "morse",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "nom",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "notkawaii",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "nyan",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "oldinsult",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "osu",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "overwatch",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "owo",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "pat",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "permissions",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "pin",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "cooldown": "10s",
             "aliases": null
         },
         {
             "name": "ping",
-            "description": "",
+            "category": "general",
+            "description": "Returns an estimated ping to Discord's servers",
             "nsfw": false,
             "usage": null,
             "example": null,
@@ -738,489 +172,73 @@
         },
         {
             "name": "pokemon",
-            "description": "",
+            "category": "fun",
+            "description": "Search for a pokemon by name",
             "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "usage": "<pokemon_name: string>",
+            "example": "squirtle",
+            "cooldown": "20s",
             "aliases": null
         },
         {
-            "name": "porn",
-            "description": "",
-            "nsfw": true,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "pout",
-            "description": "",
+            "name": "profile",
+            "category": "info",
+            "description": "View/update your profile card",
             "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "usage": "[\"large\"|\"small\"|<\"update\"] [\"bg/background\"|\"about\"] [new_value: string]>",
+            "example": "update about new about me text here",
+            "cooldown": "30s",
             "aliases": null
         },
         {
             "name": "prune",
-            "description": "",
+            "category": "moderation",
+            "description": "Prunes the given number of messages, defaults to 50 messages",
             "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "pun",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "pussy",
-            "description": "",
-            "nsfw": true,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "radio",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "raffle",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "randomtext",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "rate",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "reaction",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "remind",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "reply",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "respect",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "reverse",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "roleinfo",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "roll",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "rps",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "say",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "sayd",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "setnickname",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
+            "usage": "[messages_to_delete: number]",
+            "example": "10",
+            "cooldown": "2s",
+            "aliases": ["purge", "clear"]
         },
         {
             "name": "settings",
-            "description": "",
+            "category": "moderation",
+            "description": "Setup the settings for the current guild",
             "nsfw": false,
-            "usage": null,
+            "usage": "(Full usage at https://sophiebot.info/settings)",
             "example": null,
             "cooldown": "5s",
             "aliases": null
         },
         {
-            "name": "sfwbooru",
-            "description": "",
+            "name": "slowmode",
+            "category": "moderation",
+            "description": "Set slowmode for the current channel",
             "nsfw": false,
-            "usage": null,
+            "usage": "<seconds: number>",
             "example": null,
             "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "shard",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "slap",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "smug",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "softban",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "spin",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "spotify",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "stare",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
+            "aliases": ["slow"]
         },
         {
             "name": "stats",
-            "description": "",
+            "category": "info",
+            "description": "Shows stats about Sophie",
             "nsfw": false,
             "usage": null,
             "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "steam",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "suggest",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "support",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "throw",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "tickle",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "top5",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "translate",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "triggered",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "twitch",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "unban",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "unicode",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "unpin",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "unsplash",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "uptime",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "urban",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
+            "cooldown": "10s",
             "aliases": null
         },
         {
             "name": "userinfo",
-            "description": "",
+            "category": "info",
+            "description": "Get info about a guild member",
             "nsfw": false,
-            "usage": null,
+            "usage": "[username: mention|string]",
             "example": null,
             "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "vote",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "votecheck",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "weather",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "yandere",
-            "description": "",
-            "nsfw": true,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "youtubeinfo",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "youtubesearch",
-            "description": "",
-            "nsfw": false,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
-        },
-        {
-            "name": "zerochan",
-            "description": "",
-            "nsfw": true,
-            "usage": null,
-            "example": null,
-            "cooldown": "5s",
-            "aliases": null
+            "aliases": ["memberinfo", "member", "user"]
         }
     ]
 }
