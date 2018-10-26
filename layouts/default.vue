@@ -87,7 +87,7 @@
         border-radius: 0
         &:focus,
         &:active
-            box-shadow: 0 0 0 0 #fff;
+            box-shadow: 0 0 0 0 #fff
 
     #app
         font-family: 'Exo', sans-serif

@@ -10,7 +10,7 @@ export default {
                 return;
 
             let { resolve } = resources[name][method](options);
-            let uri = `${endpoint}?project=prinzbot&type=${method}`;
+            let uri = `${endpoint}?project=sophie&type=${method}`;
 
             const mappers = {
                 pipe: (dataSet) => Promise.resolve(dataSet),
