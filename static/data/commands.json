@@ -33,7 +33,7 @@
         {
             "name": "anime",
             "category": "fun",
-            "description": "SFind information about an anime",
+            "description": "Find information about an anime",
             "nsfw": false,
             "usage": "<anime_name: string>",
             "example": "darling in the franxx",

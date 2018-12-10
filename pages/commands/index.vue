@@ -45,9 +45,9 @@
                     <div class="content">{{ command.description }}</div>
                 </div>
                 <footer class="cmd-details">
-                    <small v-if="command.category" class="cmd-details-item">Category:&nbsp;<code>{{ command.category }}</code></small>
+                    <small v-if="command.category" class="cmd-details-item">Category:&nbsp;<code>{{ command.category.toLowerCase() }}</code></small>
                     <small v-if="command.usage" class="cmd-details-item">Usage:&nbsp;<code>s/{{ command.name }} {{ command.usage }}</code></small>
-                    <small v-if="command.cooldown" class="cmd-details-item">Cooldown:&nbsp;<strong style="font-size: .64rem;">{{ command.cooldown }}</strong></small>
+                    <small v-if="command.cooldown" class="cmd-details-item">Cooldown:&nbsp;<strong style="font-size: .64rem;">{{ command.cooldown }}s</strong></small>
                     <small v-if="command.aliases" class="cmd-details-item">Aliases: {{ command.aliases.join(', ') }}</small>
                 </footer>
             </div>
@@ -85,7 +85,12 @@
         async beforeMount() {
             await this.$utils.sleep(1);
             this.$store.commit('updateTitle', 'Commands');
-            this.cmds = await this.$getResource('commands');
+            const commands = await this.$getResource('commands');
+            this.cmds = commands.sort((a, b) => {
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+            });
         },
         mounted() {
             const sawCommandAlert = localStorage.getItem('sawCommandAlert');
