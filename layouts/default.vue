@@ -5,7 +5,7 @@
         <div class="container">
             <div class="header">
                 <img class="avatar" src="../assets/images/avatar.jpg"/>
-                <span class="h-title">Sophie Twilight | <vue-typer :text="this.$store.state.title" caret-animation="smooth" :typeDelay=120 :preTypeDelay=250 :eraseDelay=120 :preEraseDelay=60000 eraseStyle="backspace"></vue-typer></span>
+                <span class="h-title">Jeanne | <vue-typer :text="this.$store.state.title" caret-animation="smooth" :typeDelay=120 :preTypeDelay=250 :eraseDelay=120 :preEraseDelay=60000 eraseStyle="backspace"></vue-typer></span>
             </div>
             <div class="main">
                 <nuxt/>
@@ -17,7 +17,7 @@
         <footer>
             &copy; 2018 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br/>
             <a href="https://github.com/KurozeroPB" target="_blank"><i class="fab fa-github"></i>&nbsp;</a>
-            <a href="https://twitter.com/Kurozer0" target="_blank"><i class="fab fa-twitter"></i>&nbsp;</a>
+            <a href="https://twitter.com/Kurozero_" target="_blank"><i class="fab fa-twitter"></i>&nbsp;</a>
             <a href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i>&nbsp;</a>
             <a href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal"></i>&nbsp;</a>
             <a href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon"></i>&nbsp;</a>

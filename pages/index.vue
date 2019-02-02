@@ -22,11 +22,11 @@
         },
         head () {
             return {
-                title: `Sophie Twilight | ${this.title}`,
+                title: `Jeanne | ${this.title}`,
                 meta: [
-                    { hid: 'og-title', property: 'og:title', content: `Sophie Twilight | ${this.title}` },
-                    { hid: 'og-url', property: 'og:url', content: 'https://sophiebot.info' },
-                    { hid: 'twitter-title', name: 'twitter:title', content: `Sophie Twilight | ${this.title}` }
+                    { hid: 'og-title', property: 'og:title', content: `Jeanne | ${this.title}` },
+                    { hid: 'og-url', property: 'og:url', content: 'https://kurozeropb.info/jeanne' },
+                    { hid: 'twitter-title', name: 'twitter:title', content: `Jeanne | ${this.title}` }
                 ]
             }
         },
