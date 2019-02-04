@@ -3,7 +3,7 @@
     <nav id="navbar" class="navbar is-primary">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item is-size-4 has-text-weight-bold" href="/">Jeanne</a>
+                <a class="navbar-item is-size-4 has-text-weight-bold" href="/jeanne/">Jeanne</a>
                 <a class="navbar-item is-size-5-desktop" href="https://twitter.com/JeanneDiscord" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a class="navbar-item is-size-5-desktop" href="https://github.com/KurozeroPB/Jeanne" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="navbar-item is-size-5-desktop" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i></a>
