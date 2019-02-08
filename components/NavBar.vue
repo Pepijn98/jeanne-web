@@ -3,7 +3,7 @@
     <nav id="navbar" class="navbar is-primary">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item is-size-4 has-text-weight-bold" href="/jeanne/">Jeanne</a>
+                <a class="navbar-item is-size-4 has-text-weight-bold" href="/">Jeanne</a>
                 <a class="navbar-item is-size-5-desktop" href="https://twitter.com/JeanneDiscord" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a class="navbar-item is-size-5-desktop" href="https://github.com/KurozeroPB/Jeanne" target="_blank"><i class="fab fa-github"></i></a>
                 <a class="navbar-item is-size-5-desktop" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i></a>
@@ -17,9 +17,9 @@
             <div class="navbar-menu">
                 <div class="navbar-end">
                     <div class="navbar-start">
-                        <a class="navbar-item is-size-5-desktop" href="./settings/"><i class="fas fa-cogs"><span>&nbsp;Settings</span></i></a>
-                        <a class="navbar-item is-size-5-desktop" href="./commands/"><i class="fas fa-list-ul"><span>&nbsp;Commands</span></i></a>
-                        <a class="navbar-item is-size-5-desktop" href="./about/"><i class="fas fa-info-circle"><span>&nbsp;About</span></i></a>
+                        <a class="navbar-item is-size-5-desktop" href="/settings/"><i class="fas fa-cogs"><span>&nbsp;Settings</span></i></a>
+                        <a class="navbar-item is-size-5-desktop" href="/commands/"><i class="fas fa-list-ul"><span>&nbsp;Commands</span></i></a>
+                        <a class="navbar-item is-size-5-desktop" href="/about/"><i class="fas fa-info-circle"><span>&nbsp;About</span></i></a>
                         <a class="navbar-item is-size-5-desktop" href="https://discordapp.com/oauth2/authorize?&client_id=237578660708745216&scope=bot&permissions=66186303" target="_blank"><i class="fas fa-external-link-alt"><span>&nbsp;Invite</span></i></a>
                         <a v-if="!token" class="navbar-item is-size-5-desktop" href="https://api.kurozeropb.info/v1/discord/login"><i class="fas fa-sign-in-alt"><span>&nbsp;Login</span></i></a>
                         <a v-else class="navbar-item is-size-5-desktop" @click="logout"><i class="fas fa-sign-out-alt"><span>&nbsp;Logout</span></i></a>

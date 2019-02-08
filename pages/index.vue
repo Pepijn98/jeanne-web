@@ -25,7 +25,7 @@
                 title: `Jeanne | ${this.title}`,
                 meta: [
                     { hid: 'og-title', property: 'og:title', content: `Jeanne | ${this.title}` },
-                    { hid: 'og-url', property: 'og:url', content: 'https://kurozeropb.info/jeanne' },
+                    { hid: 'og-url', property: 'og:url', content: 'https://jeannebot.info' },
                     { hid: 'twitter-title', name: 'twitter:title', content: `Jeanne | ${this.title}` }
                 ]
             }
