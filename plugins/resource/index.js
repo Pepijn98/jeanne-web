@@ -1,16 +1,15 @@
 import cache from './cache';
 import _merge from 'lodash.merge';
 
+const resolve = (response, mappers) => mappers.pipe(response.results);
+
 export default {
-    install(Vue, { endpoint = '', resources = {} }) {
-        Vue.prototype.$getResource = async function (method, options) {
+    install(Vue, { endpoint = '' }) {
+        Vue.prototype.$getResource = async function (method) {
             let name = this.$options.resource;
+            if (!name) return;
 
-            if (!name || !resources[name] || !resources[name][method])
-                return;
-
-            let { resolve } = resources[name][method](options);
-            let uri = `${endpoint}?project=sophie&type=${method}`;
+            let uri = `${endpoint}?type=${method}`;
 
             const mappers = {
                 pipe: (dataSet) => Promise.resolve(dataSet),
