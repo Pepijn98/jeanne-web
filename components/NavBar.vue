@@ -46,12 +46,22 @@
                 e.target.classList.toggle('is-active');
                 return document.querySelector('.navbar-menu').classList.toggle('is-active');
             },
+            encode(object) {
+                let string = "";
+                for (const [key, value] of Object.entries(object)) {
+                    string += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+                }
+                return string.substring(1);
+            },
             async logout() {
                 try {
-                    await this.$http.get(`https://discordapp.com/api/oauth2/token/revoke?token=${this.token}`);
+                    const response = await this.$http.get(`https://api.kurozeropb.info/v1/discord/revoke?token=${this.token}`);
+                    // Temporary
+                    console.debug(response);
                     localStorage.removeItems(['token', 'user', 'expires_in']);
                     window.location.reload(true);
                 } catch (e) {
+                    console.log(e);
                     this.$utils.alertError(e.message);
                     this.$raven.captureException(e);
                 }
