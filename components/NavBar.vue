@@ -55,13 +55,10 @@
             },
             async logout() {
                 try {
-                    const response = await this.$http.get(`https://api.kurozeropb.info/v1/discord/revoke?token=${this.token}`);
-                    // Temporary
-                    console.debug(response);
+                    await this.$http.get(`https://api.kurozeropb.info/v1/discord/revoke?token=${this.token}`);
                     localStorage.removeItems(['token', 'user', 'expires_in']);
                     window.location.reload(true);
                 } catch (e) {
-                    console.log(e);
                     this.$utils.alertError(e.message);
                     this.$raven.captureException(e);
                 }
