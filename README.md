@@ -1,2 +1,2 @@
-# sophie-web
-Simple website for my Discord bot (https://github.com/KurozeroPB/Sophie) describing functions and commands
+# jeanne-web
+Simple website for my Discord bot (https://github.com/KurozeroPB/Jeanne) describing functions and commands

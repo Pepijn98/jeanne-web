@@ -1,12 +1,8 @@
-/**
- * Set multiple storage items
- * @param {Object<String,Any>} items
- */
-Storage.prototype.setItems = function (items) {
+Storage.prototype.setItems = function (items: Object): void {
     for (let item in items) {
         if (items.hasOwnProperty(item)) {
             let itemToSet = "";
-            if (typeof items[item] === 'object')
+            if (typeof items[item] === "object")
                 itemToSet = JSON.stringify(items[item]);
             else
                 itemToSet = items[item];
@@ -16,11 +12,7 @@ Storage.prototype.setItems = function (items) {
     }
 };
 
-/**
- * Remove multiple storage items
- * @param {Array<String>} items
- */
-Storage.prototype.removeItems = function (items) {
+Storage.prototype.removeItems = function (items: Array<string>): void {
     for (let index = 0; index < items.length; index++)
         this.removeItem(items[index]);
 };

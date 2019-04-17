@@ -1,42 +1,71 @@
 {
-  "name": "sophie-web",
-  "version": "2.0.0",
-  "description": "Nuxt.js project",
-  "author": "KurozeroPB <root@kurozeropb.info>",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
-  },
-  "dependencies": {
-    "@nuxtjs/component-cache": "^1.1.3",
-    "@nuxtjs/google-adsense": "^1.1.3",
-    "@nuxtjs/google-analytics": "^2.0.2",
-    "@nuxtjs/sentry": "^1.1.3",
-    "axios": "^0.18.0",
-    "buefy": "^0.6.7",
-    "css-loader": "^1.0.0",
-    "lodash.merge": "^4.6.1",
-    "node-sass": "^4.9.3",
-    "nuxt": "1.0.0",
-    "sass-loader": "^7.1.0",
-    "toml": "^2.3.3",
-    "vue": "^2.5.17",
-    "vue-analytics": "^5.16.0",
-    "vue-meta": "^1.5.3",
-    "vue-progressbar": "^0.7.5",
-    "vue-typer": "^1.2.0",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint": "^5.3.0",
-    "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-vue": "^4.0.0"
-  }
+    "name": "jeanne-web",
+    "version": "2.0.0",
+    "description": "Website for my discord bot Jeanne",
+    "license": "MIT",
+    "private": false,
+    "author": {
+        "email": "root@kurozeropb.info",
+        "name": "KurozeroPB",
+        "url": "https://kurozeropb.info"
+    },
+    "bugs": {
+        "email": "bugs@kurozeropb.info",
+        "url": "https://github.com/KurozeroPB/jeanne-web/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KurozeroPB/jeanne-web.git"
+    },
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "prestart": "yarn build",
+        "generate": "nuxt generate",
+        "lint": "eslint --ext .ts,.js,.vue .",
+        "lint:fix": "eslint --ext .ts,.js,.vue --fix .",
+        "precommit": "yarn lint"
+    },
+    "dependencies": {
+        "@nuxtjs/component-cache": "^1.1.4",
+        "@nuxtjs/google-adsense": "^1.1.3",
+        "@nuxtjs/google-analytics": "^2.2.0",
+        "@nuxtjs/sentry": "^2.3.2",
+        "axios": "^0.18.0",
+        "buefy": "^0.7.4",
+        "css-loader": "^2.1.1",
+        "lodash.merge": "^4.6.1",
+        "node-sass": "^4.11.0",
+        "nuxt": "^2.6.2",
+        "sass-loader": "^7.1.0",
+        "ts-node": "^8.1.0",
+        "vue": "^2.6.10",
+        "vue-analytics": "^5.16.4",
+        "vue-class-component": "^7.0.2",
+        "vue-meta": "^1.6.0",
+        "vue-progressbar": "^0.7.5",
+        "vue-property-decorator": "^8.1.0",
+        "vue-typer": "^1.2.0",
+        "vuex": "^3.1.0"
+    },
+    "devDependencies": {
+        "@nuxt/config": "^2.6.2",
+        "@nuxt/typescript": "^2.6.2",
+        "@nuxt/vue-app": "^2.6.2",
+        "@nuxtjs/eslint-config": "^0.0.1",
+        "@types/webpack-env": "^1.13.9",
+        "@typescript-eslint/eslint-plugin": "^1.6.0",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.16.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-friendly-formatter": "^4.0.1",
+        "eslint-loader": "^2.1.2",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-jest": "^22.4.1",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.1.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "eslint-plugin-vue": "^5.2.2"
+    }
 }

@@ -56,16 +56,16 @@ typings/
 
 # dotenv environment variables file
 .env
-settings.toml
+settings.ts
 
 # next.js build output
 .next
 
 # Nuxt build
-.nuxt
+.nuxt/
 
 # Nuxt generate
-dist
+dist/
 
 # Editor
-.idea
+.idea/

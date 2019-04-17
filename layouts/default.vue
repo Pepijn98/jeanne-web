@@ -1,57 +1,77 @@
 <template>
     <div id="app">
-        <nav-bar></nav-bar>
-        <vue-progress-bar></vue-progress-bar>
+        <nav-bar />
+        <vue-progress-bar />
         <div class="container">
             <div class="header">
-                <img class="avatar" src="../assets/images/avatar.jpg"/>
-                <span class="h-title">Jeanne | <vue-typer :text="this.$store.state.title" caret-animation="smooth" :typeDelay=120 :preTypeDelay=250 :eraseDelay=120 :preEraseDelay=60000 eraseStyle="backspace"></vue-typer></span>
+                <img class="avatar" src="../assets/images/avatar.jpg">
+                <span class="h-title">Jeanne | <vue-typer
+                    :text="this.$store.state.title"
+                    caret-animation="smooth"
+                    :type-delay="120"
+                    :pre-type-delay="250"
+                    :erase-delay="120"
+                    :pre-erase-delay="60000"
+                    erase-style="backspace" />
+                </span>
             </div>
             <div class="main">
-                <nuxt/>
+                <nuxt />
             </div>
             <div class="ads">
-                <adsbygoogle ad-slot="5372000314"></adsbygoogle>
+                <adsbygoogle ad-slot="5372000314" />
             </div>
         </div>
         <footer>
-            &copy; 2018 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br/>
-            <a href="https://github.com/KurozeroPB" target="_blank"><i class="fab fa-github"></i>&nbsp;</a>
-            <a href="https://twitter.com/Kurozero_" target="_blank"><i class="fab fa-twitter"></i>&nbsp;</a>
-            <a href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord"></i>&nbsp;</a>
-            <a href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal"></i>&nbsp;</a>
-            <a href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon"></i>&nbsp;</a>
+            &copy; 2018 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br>
+            <a href="https://github.com/KurozeroPB" target="_blank"><i class="fab fa-github" />&nbsp;</a>
+            <a href="https://twitter.com/Kurozero_" target="_blank"><i class="fab fa-twitter" />&nbsp;</a>
+            <a href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord" />&nbsp;</a>
+            <a href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal" />&nbsp;</a>
+            <a href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon" />&nbsp;</a>
         </footer>
     </div>
 </template>
 
-<script>
-    export default {
-        name: 'Default',
-        data() {
-            return {
-                title: 'Default'
-            }
-        },
-        beforeCreate() {
-            this.$nuxt.$Progress.start();
-        },
-        mounted() {
-            this.$nextTick(async () => {
-                await this.$utils.sleep(500);
-                this.$nuxt.$Progress.finish();
-            });
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+import { ComponentOptions } from "vue/types/options";
 
-            const sawAlert = sessionStorage.getItem('sawAlert');
-            if (sawAlert !== 'true')
-                this.$utils.snackbar({
-                    message: 'This website is in early alpha testing, expect alot of stuff to not work!',
-                    type: 'is-warning',
-                    indefinite: true,
-                    onAction: () => sessionStorage.setItem('sawAlert', 'true')
-                });
-        }
-    };
+// Extend ComponentOptions with custom properties
+interface ExtendedOptions extends ComponentOptions<Vue> {
+    [others: string]: any;
+}
+
+@Component(<ExtendedOptions>{
+    name: "Default",
+    data() {
+        return {
+            title: "Default"
+        };
+    },
+    beforeRouteEnter() {
+        this.$nuxt.$loading.start();
+    },
+    beforeRouteUpdate() {
+        this.$nuxt.$loading.start();
+    },
+    mounted() {
+        this.$nextTick(async () => {
+            await this.$utils.sleep(500);
+            this.$nuxt.$loading.finish();
+        });
+
+        const sawAlert = sessionStorage.getItem("sawAlert");
+        if (sawAlert !== "true")
+            this.$utils.snackbar({
+                message: "This website is in early alpha testing, expect alot of stuff to not work!",
+                type: "is-warning",
+                indefinite: true,
+                onAction: () => sessionStorage.setItem("sawAlert", "true")
+            });
+    }
+})
+export default class Default extends Vue {};
 </script>
 
 <!--suppress SassScssUnresolvedVariable -->
@@ -150,4 +170,3 @@
         & > span > .custom.char
             color: $title
 </style>
-

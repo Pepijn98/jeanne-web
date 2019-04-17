@@ -3,44 +3,51 @@
         <div class="settings">
             <div v-for="setting in settings" :key="setting.title" class="card setting">
                 <div class="card-header setting-title">
-                    <p class="card-header-title setting-name">
-                        {{ setting.title }}
-                    </p>
+                    <p class="card-header-title setting-name"> {{ setting.title }} </p>
                 </div>
                 <div class="card-content setting-description">
-                    <div class="content" v-html="setting.description"></div>
+                <div class="content" v-html="setting.description" />
                 </div>
             </div>
         </div>
     </div>
 </template>
 
-<script>
-    export default {
-        name: 'Settings',
-        resource: 'Settings',
-        data() {
-            return {
-                settings: [],
-                title: 'Settings'
-            };
-        },
-        head () {
-            return {
-                title: `Jeanne | ${this.title}`,
-                meta: [
-                    { hid: 'og-title', property: 'og:title', content: `Jeanne | ${this.title}` },
-                    { hid: 'og-url', property: 'og:url', content: `https://jeannebot.info/${this.title.toLowerCase()}` },
-                    { hid: 'twitter-title', name: 'twitter:title', content: `Jeanne | ${this.title}` }
-                ]
-            }
-        },
-        async beforeMount() {
-            await this.$utils.sleep(1);
-            this.$store.commit('updateTitle', 'Settings');
-            this.settings = await this.$getResource('settings');
-        }
-    };
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+import { ComponentOptions } from "vue/types/options";
+
+// Extend ComponentOptions with custom properties
+interface ExtendedOptions extends ComponentOptions<Vue> {
+    [others: string]: any;
+}
+
+@Component(<ExtendedOptions>{
+    name: "Settings",
+    resource: "Settings",
+    data() {
+        return {
+            settings: [],
+            title: "Settings"
+        };
+    },
+    head() {
+        return {
+            title: `Jeanne | ${this.title}`,
+            meta: [
+                { hid: "og-title", property: "og:title", content: `Jeanne | ${this.title}` },
+                { hid: "og-url", property: "og:url", content: `https://jeannebot.info/${this.title.toLowerCase()}` },
+                { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
+            ]
+        };
+    },
+    async beforeMount() {
+        await this.$utils.sleep(1);
+        this.$store.commit("updateTitle", "Settings");
+        this.settings = await this.$getResource("settings");
+    }
+})
+export default class SettingsPage extends Vue {};
 </script>
 
 <style lang="sass" scoped>

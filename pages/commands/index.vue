@@ -2,20 +2,16 @@
 <template>
     <div>
         <div class="search-wrapper">
-            <b-autocomplete
-                v-model="search"
-                :data="commands"
-                placeholder="Search command by name.."
-                icon="magnify"
-                field="name"
-                @select="(command) => selected = command">
+            <b-autocomplete v-model="search" :data="commands" placeholder="Search command by name.." icon="magnify" field="name" @select="(command) => selected = command">
                 <template slot="empty">No results found</template>
             </b-autocomplete>
         </div>
         <div class="commands">
             <div v-if="selected !== null" class="card command">
                 <div class="card-header cmd-title">
-                    <p class="card-header-title cmd-name">s/{{ selected.name }} <span v-if="selected.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
+                    <p class="card-header-title cmd-name">
+                        s/{{ selected.name }} <span v-if="selected.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span>
+                    </p>
                     <a v-if="selected.example" class="card-header-icon">
                         <b-tooltip :label="selected.example ? `s/${selected.name} ${selected.example}` : ''" position="is-left" animated square>
                             <p class="example">Example</p>
@@ -32,9 +28,11 @@
                     <small v-if="selected.aliases" class="cmd-details-item">Aliases: {{ selected.aliases.join(', ') }}</small>
                 </footer>
             </div>
-            <div v-else v-for="command in commands" :key="command.name" class="card command">
+            <div v-for="command in commands" v-else :key="command.name" class="card command">
                 <div class="card-header cmd-title">
-                    <p class="card-header-title cmd-name">s/{{ command.name }} <span v-if="command.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span></p>
+                    <p class="card-header-title cmd-name">
+                        s/{{ command.name }} <span v-if="command.nsfw" class="nsfw-tag nsfw-tag-text">nsfw</span>
+                    </p>
                     <a v-if="command.example" class="card-header-icon">
                         <b-tooltip :label="command.example ? `s/${command.name} ${command.example}` : ''" position="is-left" animated square>
                             <p class="example">Example</p>
@@ -55,53 +53,62 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: 'Commands',
-        resource: 'Commands',
-        data() {
-            return {
-                search: '',
-                cmds: [],
-                title: 'Commands',
-                selected: null
-            };
-        },
-        head () {
-            return {
-                title: `Jeanne | ${this.title}`,
-                meta: [
-                    { hid: 'og-title', property: 'og:title', content: `Jeanne | ${this.title}` },
-                    { hid: 'og-url', property: 'og:url', content: `https://jeannebot.info/${this.title.toLowerCase()}` },
-                    { hid: 'twitter-title', name: 'twitter:title', content: `Jeanne | ${this.title}` }
-                ]
-            }
-        },
-        computed: {
-            commands() {
-                return this.cmds.filter((cmd) => cmd.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0);
-            }
-        },
-        async beforeMount() {
-            await this.$utils.sleep(1);
-            this.$store.commit('updateTitle', 'Commands');
-            const commands = await this.$getResource('commands');
-            this.cmds = commands.sort((a, b) => {
-                if (a.name < b.name) return -1;
-                if (a.name > b.name) return 1;
-                return 0;
-            });
-        },
-        mounted() {
-            const sawCommandAlert = localStorage.getItem('sawCommandAlert');
-            if (sawCommandAlert !== 'true')
-                this.$utils.snackbar({
-                    message: 'Description for certain commands will be added later',
-                    type: 'is-danger',
-                    onAction: () => localStorage.setItem('sawCommandAlert', 'true')
-                });
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+import { ComponentOptions } from "vue/types/options";
+
+// Extend ComponentOptions with custom properties
+interface ExtendedOptions extends ComponentOptions<Vue> {
+    [others: string]: any;
+}
+
+@Component(<ExtendedOptions>{
+    name: "Commands",
+    resource: "Commands",
+    data() {
+        return {
+            search: "",
+            cmds: [],
+            title: "Commands",
+            selected: null
+        };
+    },
+    head() {
+        return {
+            title: `Jeanne | ${this.title}`,
+            meta: [
+                { hid: "og-title", property: "og:title", content: `Jeanne | ${this.title}` },
+                { hid: "og-url", property: "og:url", content: `https://jeannebot.info/${this.title.toLowerCase()}` },
+                { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
+            ]
+        };
+    },
+    computed: {
+        commands() {
+            return this.cmds.filter((cmd) => cmd.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0);
         }
-    };
+    },
+    async beforeMount() {
+        await this.$utils.sleep(1);
+        this.$store.commit("updateTitle", "Commands");
+        const commands = await this.$getResource("commands");
+        this.cmds = commands.sort((a, b) => {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+        });
+    },
+    mounted() {
+        const sawCommandAlert = localStorage.getItem("sawCommandAlert");
+        if (sawCommandAlert !== "true")
+            this.$utils.snackbar({
+                message: "Description for certain commands will be added later",
+                type: "is-danger",
+                onAction: () => localStorage.setItem("sawCommandAlert", "true")
+            });
+    }
+})
+export default class CommandsPage extends Vue {};
 </script>
 
 <!--suppress SassScssUnresolvedVariable -->
