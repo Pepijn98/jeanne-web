@@ -46,13 +46,6 @@
                 e.target.classList.toggle('is-active');
                 return document.querySelector('.navbar-menu').classList.toggle('is-active');
             },
-            encode(object) {
-                let string = "";
-                for (const [key, value] of Object.entries(object)) {
-                    string += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
-                }
-                return string.substring(1);
-            },
             async logout() {
                 try {
                     await this.$http.get(`https://api.kurozeropb.info/v1/discord/revoke?token=${this.token}`);

@@ -51,7 +51,7 @@ Vue.prototype.$utils = {
     },
     /**
      * An async forEach function
-     * @param {Iterable} array - Array to loop over
+     * @param {ArrayLike} array - Array to loop over
      * @param {Function} callback - Async callback which returns the value, key and original array
      */
     foreachAsync: async (array, callback) => {
@@ -75,5 +75,18 @@ Vue.prototype.$utils = {
             icon: 'info-circle',
             iconPack: 'fa'
         });
+    },
+    /**
+     * Encode an object
+     * @param {Object} object - The object to encode
+     * @returns {string}
+     */
+    encode(object) {
+        let string = "";
+        for (const [key, value] of Object.entries(object)) {
+            string += `&${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+        }
+
+        return string.substring(1);
     }
 };
