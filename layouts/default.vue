@@ -35,12 +35,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { ComponentOptions } from "vue/types/options";
-
-// Extend ComponentOptions with custom properties
-interface ExtendedOptions extends ComponentOptions<Vue> {
-    [others: string]: any;
-}
+import { ExtendedOptions } from "~/types/options.interfaces";
 
 @Component(<ExtendedOptions>{
     name: "Default",
