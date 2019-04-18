@@ -1,5 +1,6 @@
 import Vue from "vue";
 import { AxiosStatic } from "axios";
+import { NuxtAxiosInstance } from "@nuxtjs/axios";
 import { SnackbarConfig } from "buefy/types/components";
 
 declare module "*.vue" {
@@ -30,14 +31,15 @@ declare global {
 
 /*
  * $getResource - plugins/resource/index.ts
- * $http        - middleware/utils.ts
+ * $axios       - @nuxtjs/axios module
+ * $sentry      - @nuxtjs/sentry module
  * $utils       - middleware/utils.ts
  */
 declare module "vue/types/vue" {
     interface Vue {
         /** Request resource data from the api */
-        $getResource(method: string): Promise<any>
-        $http: AxiosStatic;
+        $getResource(method: string): Promise<any>;
+        $axios: NuxtAxiosInstance;
         $sentry: any;
         $utils: {
             /** Check if an Object is empty */
@@ -54,6 +56,6 @@ declare module "vue/types/vue" {
             notAvailable(): void;
             /** Encode an object */
             encode(object: Object): string;
-        }
+        };
     }
 }

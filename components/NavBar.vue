@@ -65,12 +65,12 @@ interface ExtendedOptions extends ComponentOptions<Vue> {
             localStorage.setItems({
                 "refresh": true,
                 "token": this.token,
-                "expires_in": new Date().getTime() + this.expires
+                "expires_in": (new Date()).getTime() + this.expires
             });
 
             const options = { headers: { Authorization: `Bearer ${this.token}` } };
             try {
-                const { data, status, statusText } = await this.$http.get("https://discordapp.com/api/users/@me", options);
+                const { data, status, statusText } = await this.$axios.get("https://discordapp.com/api/users/@me", options);
 
                 if (this.$utils.isEmptyObject(data)) { // Check if data is empty
                     const error = new Error("Got an empty response from the server");
@@ -126,7 +126,7 @@ interface ExtendedOptions extends ComponentOptions<Vue> {
         },
         async logout() {
             try {
-                await this.$http.get(`https://api.kurozeropb.info/v1/discord/revoke?token=${this.$data.token}`);
+                await this.$axios.get(`https://api.kurozeropb.info/v1/discord/revoke?token=${this.$data.token}`);
                 localStorage.removeItems(["token", "user", "expires_in"]);
                 window.location.reload(true);
             } catch (e) {

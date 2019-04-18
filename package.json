@@ -28,6 +28,7 @@
         "precommit": "yarn lint"
     },
     "dependencies": {
+        "@nuxtjs/axios": "^5.4.1",
         "@nuxtjs/component-cache": "^1.1.4",
         "@nuxtjs/google-adsense": "^1.1.3",
         "@nuxtjs/google-analytics": "^2.2.0",

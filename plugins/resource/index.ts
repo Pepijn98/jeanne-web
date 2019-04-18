@@ -1,7 +1,7 @@
 import _merge from "lodash.merge";
 import cache from "./cache";
-import { VueConstructor as Vue } from "vue";
 import { AxiosResponse } from "axios";
+import { VueConstructor as Vue } from "vue";
 
 interface Mappers {
     pipe(dataSet: any): Promise<any>;
@@ -34,7 +34,7 @@ export default {
             if (cache.has(uri))
                 return resolve(cache.get(uri), mappers);
 
-            let response: AxiosResponse = await Vue.prototype.$http.get(uri);
+            let response: AxiosResponse = await Vue.prototype.$axios.get(uri);
             let data = await cache.set(uri, response.data);
             return resolve(data, mappers);
         };

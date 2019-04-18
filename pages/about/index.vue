@@ -46,7 +46,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             const donators = document.getElementById("donators");
             const developer = document.getElementById("developer");
             try {
-                const response = await this.$http.get("https://api.kurozeropb.info/v1/donators");
+                const response = await this.$axios.get("https://api.kurozeropb.info/v1/donators");
                 if (this.$utils.isEmptyObject(response)) { // Check if the response is empty
                     const error = new Error("Got an empty response from the server");
                     this.$utils.alertError(error.message);

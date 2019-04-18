@@ -64,7 +64,8 @@ const nuxtConfig: NuxtConfiguration = {
         "@nuxtjs/component-cache",
         "@nuxtjs/google-analytics",
         // '@nuxtjs/google-adsense',
-        "@nuxtjs/sentry"
+        "@nuxtjs/sentry",
+        "@nuxtjs/axios"
     ],
     "google-analytics": { id: settings.google.analytics.trackingId },
     // 'google-adsense': {
