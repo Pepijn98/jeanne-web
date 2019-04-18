@@ -1,5 +1,8 @@
 import Vue from "vue";
+import axios from "axios";
 import { SnackbarConfig } from "buefy/types/components";
+
+Vue.prototype.$http = axios;
 
 // Add $utils to the Vue prototype with all the utility functions
 Vue.prototype.$utils = {

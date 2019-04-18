@@ -49,9 +49,7 @@ const nuxtConfig: NuxtConfiguration = {
             { rel: "shortcut icon", href: "/head-icons/favicon.ico" },
             { rel: "mask-icon", href: "/head-icons/android-chrome-512x512.jpg", color: "#7A202C" }
         ],
-        script: [
-            /* { src: 'https://cdn.ywxi.net/js/1.js', type: 'text/javascript', async: "", defer: "", body: true } */
-        ],
+        script: [],
         noscript: [
             { innerHTML: "This website requires JavaScript." }
         ]
@@ -64,17 +62,17 @@ const nuxtConfig: NuxtConfiguration = {
         "@nuxtjs/component-cache",
         "@nuxtjs/axios",
         "@nuxtjs/google-analytics",
-        // '@nuxtjs/google-adsense',
+        "@nuxtjs/google-adsense",
         "@nuxtjs/sentry",
         "@nuxtjs/sitemap"
     ],
     "google-analytics": { id: settings.google.analytics.trackingId },
-    // 'google-adsense': {
-    // id: settings.google.adsense.adClient,
-    // analyticsUacct: settings.google.analytics.accountId,
-    // analyticsDomainName: settings.google.analytics.domain,
-    // test: settings.google.test
-    // },
+    "google-adsense": {
+        id: settings.google.adsense.adClient,
+        analyticsUacct: settings.google.analytics.accountId,
+        analyticsDomainName: settings.google.analytics.domain,
+        test: settings.google.test
+    },
     sentry: {
         dsn: settings.sentry.dsn,
         config: { release: settings.version }

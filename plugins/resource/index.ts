@@ -34,7 +34,7 @@ export default {
             if (cache.has(uri))
                 return resolve(cache.get(uri), mappers);
 
-            let response: AxiosResponse = await Vue.prototype.$axios.get(uri);
+            let response: AxiosResponse = await Vue.prototype.$http.get(uri);
             let data = await cache.set(uri, response.data);
             return resolve(data, mappers);
         };
