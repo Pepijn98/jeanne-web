@@ -14,6 +14,28 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 
+interface User {
+    username: string,
+    locale: string;
+    premium_type: number;
+    mfa_enabled: boolean;
+    flags: number;
+    avatar: string;
+    discriminator: string;
+    id: string;
+}
+
+interface Traits {
+    name: string;
+    createdAt: string;
+}
+
+interface SatisMeterConfig {
+    writeKey: string;
+    userId?: string;
+    traits?: Traits;
+}
+
 @Component(<ExtendedOptions>{
     name: "Home",
     resource: "Features",
@@ -44,6 +66,32 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 }
             ]
         };
+    },
+    created() {
+        // Inject satismeter script only on the homepage
+        if (process.browser) {
+            const userString = localStorage.getItem("user");
+            const config: SatisMeterConfig = {
+                writeKey: "mdz26zo4FRZrjbkS"
+            };
+
+            if (userString) {
+                try {
+                    const user: User = JSON.parse(userString);
+                    config.userId = user.id;
+                    config.traits = {
+                        name: user.username,
+                        createdAt: (new Date()).toISOString()
+                    };
+                } catch (e) { }
+            }
+
+            const satismeter = document.createElement("script");
+            satismeter.type = "text/javascript";
+            satismeter.defer = true;
+            satismeter.innerHTML = `(function() { window.satismeter = window.satismeter || function() {(window.satismeter.q = window.satismeter.q || []).push(arguments);};window.satismeter.l = 1 * new Date();var script = document.createElement("script");var parent = document.getElementsByTagName("script")[0].parentNode;script.async = 1;script.src = "https://app.satismeter.com/satismeter.js";parent.appendChild(script);})(); satismeter(${JSON.stringify(config)});`;
+            document.body.appendChild(satismeter);
+        }
     },
     async beforeMount() {
         await this.$utils.sleep(1);

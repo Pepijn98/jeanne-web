@@ -49,7 +49,9 @@ const nuxtConfig: NuxtConfiguration = {
             { rel: "shortcut icon", href: "/head-icons/favicon.ico" },
             { rel: "mask-icon", href: "/head-icons/android-chrome-512x512.jpg", color: "#7A202C" }
         ],
-        script: [],
+        script: [
+            // { defer: true, type: "text/javascript", innerHTML: "(function() { window.satismeter = window.satismeter || function() {(window.satismeter.q = window.satismeter.q || []).push(arguments);};window.satismeter.l = 1 * new Date();var script = document.createElement(\"script\");var parent = document.getElementsByTagName(\"script\")[0].parentNode;script.async = 1;script.src = \"https://app.satismeter.com/satismeter.js\";parent.appendChild(script);})(); satismeter({ writeKey: \"mdz26zo4FRZrjbkS\" });" }
+        ],
         noscript: [
             { innerHTML: "This website requires JavaScript." }
         ]
