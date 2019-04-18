@@ -62,10 +62,11 @@ const nuxtConfig: NuxtConfiguration = {
     ],
     modules: [
         "@nuxtjs/component-cache",
+        "@nuxtjs/axios",
         "@nuxtjs/google-analytics",
         // '@nuxtjs/google-adsense',
         "@nuxtjs/sentry",
-        "@nuxtjs/axios"
+        "@nuxtjs/sitemap"
     ],
     "google-analytics": { id: settings.google.analytics.trackingId },
     // 'google-adsense': {
@@ -78,10 +79,20 @@ const nuxtConfig: NuxtConfiguration = {
         dsn: settings.sentry.dsn,
         config: { release: settings.version }
     },
+    sitemap: {
+        hostname: "https://jeannebot.info",
+        gzip: true,
+        defaults: {
+            changefreq: "daily",
+            priority: 1,
+            lastmod: new Date(),
+            lastmodrealtime: true
+        }
+    },
     build: {
         extend(config, { isDev, isClient }) {
             if (isDev && isClient)
-                config.module.rules.push({ enforce: "pre", test: /\.(js|vue)$/, loader: "eslint-loader", exclude: /(node_modules)/ });
+                config.module.rules.push({ enforce: "pre", test: /\.(ts|js|vue)$/, loader: "eslint-loader", exclude: /(node_modules)/ });
         }
     }
 };
