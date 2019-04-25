@@ -50,7 +50,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 if (this.$utils.isEmptyObject(response)) { // Check if the response is empty
                     const error = new Error("Got an empty response from the server");
                     this.$utils.alertError(error.message);
-                    return this.$raven.captureException(error);
+                    return this.$sentry.captureException(error);
                 }
 
                 // Destructing response with all we need
@@ -58,25 +58,25 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 if (this.$utils.isEmptyObject(data)) { // Check if data is empty
                     const error = new Error("Got an empty response from the server");
                     this.$utils.alertError(error.message);
-                    return this.$raven.captureException(error);
+                    return this.$sentry.captureException(error);
                 }
 
                 if (data.donatorsData.length === 0) { // Check if donators is empty
                     const error = new Error("No donators were found");
                     this.$utils.alertError(error.message);
-                    return this.$raven.captureException(error);
+                    return this.$sentry.captureException(error);
                 }
 
                 if (data.statusCode >= 400) { // Check if the server send an error code
                     const error = new Error(data.message ? data.message : "Failed to request data from the server");
                     this.$utils.alertError(error.message);
-                    return this.$raven.captureException(error);
+                    return this.$sentry.captureException(error);
                 }
 
                 if (status >= 400) { // Check if axios errored
                     const error = new Error(statusText || "Failed to request data from the server");
                     this.$utils.alertError(error.message);
-                    return this.$raven.captureException(error);
+                    return this.$sentry.captureException(error);
                 }
 
                 // Developer stuff
@@ -116,7 +116,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 });
             } catch (e) {
                 this.$utils.alertError(e.message);
-                this.$raven.captureException(e);
+                this.$sentry.captureException(e);
             }
         }
     },
