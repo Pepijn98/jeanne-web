@@ -107,74 +107,86 @@ export default class CommandsPage extends Vue {};
 </script>
 
 <!--suppress SassScssUnresolvedVariable -->
-<style lang="sass" scoped>
-    @import "../../assets/sass/main.sass"
+<style lang="scss" scoped>
+    @import "../../assets/sass/main.sass";
 
-    .search-wrapper
-        position: relative
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-        align-items: flex-start
-        margin-bottom: 10px
+    .search-wrapper {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        .autocomplete {
+            color: $text;
+            border: 1px solid $background;
+            transition: .15s all ease-in-out;
+            background: $background-light;
+            width: 500px;
+        }
+    }
 
-        .autocomplete
-            color: $text
-            border: 1px solid $background
-            transition: .15s all ease-in-out
-            background: $background-light
-            width: 500px
-
-    .commands
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-        align-items: flex-start
-        & > .command
-            width: 512px
-            margin: 10px
-            background-color: $background
-            & > .cmd-title
-                box-shadow: 0 1px 2px $primary
-                & > .cmd-name
-                    font-family: Exo, sans-serif
-                    font-weight: 500
-                    font-size: 20px
-                    color: $text
-                    width: 400px
-                    display: inline-block
-                    & > .nsfw-tag
-                        background: $danger
-                        color: #FFF
-                        font-size: 12px
-                        vertical-align: middle
-                        cursor: pointer
-                        padding: 0 4px
-                        margin: 2px 4px 2px 6px
-                        display: inline-block
-                        height: 18px
-                        line-height: 18px
-                        &:hover
-                            opacity: .85
-                & > a > span > .example
-                    background-color: transparent
-                    color: $text
-                    border: 1px solid $text
-                    font-size: 1rem
-                    padding: calc(0.375em - 1px) calc(0.625em - 1px)
-            & > .cmd-description
-                font-size: 14px
-                & > .content
-                    color: $text
-            & > .cmd-details
-                border-top: 1px solid $primary
-                font-size: 14px
-                & > .cmd-details-item
-                    color: $text
-                    align-items: center
-                    display: flex
-                    flex-basis: 0
-                    flex-grow: 1
-                    flex-shrink: 0
-                    padding: 0 0.75rem 0.2rem 0.75rem
+    .commands {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        & > .command {
+            width: 512px;
+            margin: 10px;
+            background-color: $background;
+            & > .cmd-title {
+                box-shadow: 0 1px 2px $primary;
+                & > .cmd-name {
+                    font-family: Exo, sans-serif;
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: $text;
+                    width: 400px;
+                    display: inline-block;
+                    & > .nsfw-tag {
+                        background: $danger;
+                        color: #FFF;
+                        font-size: 12px;
+                        vertical-align: middle;
+                        cursor: pointer;
+                        padding: 0 4px;
+                        margin: 2px 4px 2px 6px;
+                        display: inline-block;
+                        height: 18px;
+                        line-height: 18px;
+                        &:hover {
+                            opacity: .85;
+                        }
+                    }
+                }
+                & > a > span > .example {
+                    background-color: transparent;
+                    color: $text;
+                    border: 1px solid $text;
+                    font-size: 1rem;
+                    padding: calc(0.375em - 1px) calc(0.625em - 1px);
+                }
+            }
+            & > .cmd-description {
+                font-size: 14px;
+                & > .content {
+                    color: $text;
+                }
+            }
+            & > .cmd-details {
+                border-top: 1px solid $primary;
+                font-size: 14px;
+                & > .cmd-details-item {
+                    color: $text;
+                    align-items: center;
+                    display: flex;
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    flex-shrink: 0;
+                    padding: 0 0.75rem 0.2rem 0.75rem;
+                }
+            }
+        }
+    }
 </style>

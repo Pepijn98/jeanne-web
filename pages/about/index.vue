@@ -128,74 +128,92 @@ import { ExtendedOptions } from "~/types/options.interfaces";
 export default class AboutPage extends Vue {};
 </script>
 
-<style lang="sass">
-    @import "../../assets/sass/main.sass"
+<style lang="scss">
+    @import "../../assets/sass/main.sass";
 
-    .links
-        text-align: center
-        font-size: 18px
-        padding: 0 0 8px
-        & .github
+    .links {
+        text-align: center;
+        font-size: 18px;
+        padding: 0 0 8px;
+        & .github {
             color: #0A0A0A
-        & .twitter
-            color: #1DA1F2
-        & .discord
-            color: #7289DA
-        & .paypal
-            color: #253B80
-        & .patreon
-            color: #F96854
+        }
+        & .twitter {
+            color: #1DA1F2;
+        }
+        & .discord {
+            color: #7289DA;
+        }
+        & .paypal {
+            color: #253B80;
+        }
+        & .patreon {
+            color: #F96854;
+        }
+    }
 
-    .divider
-        height: 3px
-        margin: 1.5rem
-        padding: 0
-        display: block
-        border: 0
-        transition: margin-left .3s cubic-bezier(.4, 0, .2, 1)
-        will-change: margin-left
+    .divider {
+        height: 3px;
+        margin: 1.5rem;
+        padding: 0;
+        display: block;
+        border: 0;
+        transition: margin-left .3s cubic-bezier(.4, 0, .2, 1);
+        will-change: margin-left;
+    }
 
-    .about-title, .donators-title
-        text-align: center
-        padding: 0 0 8px
-        font-size: 40px
-        font-weight: 500
-        color: $title
+    .about-title,
+    .donators-title {
+        text-align: center;
+        padding: 0 0 8px;
+        font-size: 40px;
+        font-weight: 500;
+        color: $title;
+    }
 
-    .developer
-        & > .developer-name
-            text-align: center
-            padding: 7px 8px 4px
-            font-size: 20px
-            font-weight: 500
-            color: $title
-            & > small
-                font-size: 15px
-        & > .developer-image
-            display: block
-            margin-left: auto
-            margin-right: auto
+    .developer {
+        & > .developer-name {
+            text-align: center;
+            padding: 7px 8px 4px;
+            font-size: 20px;
+            font-weight: 500;
+            color: $title;
+            & > small {
+                font-size: 15px;
+            }
+        }
+        & > .developer-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 
-    .donators
-        display: flex
-        justify-content: space-around
-        flex-wrap: wrap
-        margin: 0 0 2rem 0
-        & > p, img
-            padding: 8px
-        & > .donator
-            width: calc((100% - 1rem) / 3)
-            min-width: 260px
-            margin: .5rem 0
-            align-self: flex-start
-            & > .donator-name
-                text-align: center
-                padding: 7px 8px 4px
-                font-size: 20px
-                font-weight: 500
-                color: $title
-            & > .donator-image
-                display: block
-                margin-left: auto
-                margin-right: auto
+    .donators {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0 0 2rem 0;
+        & > p, img {
+            padding: 8px;
+        }
+        & > .donator {
+            width: calc((100% - 1rem) / 3);
+            min-width: 260px;
+            margin: .5rem 0;
+            align-self: flex-start;
+            & > .donator-name {
+                text-align: center;
+                padding: 7px 8px 4px;
+                font-size: 20px;
+                font-weight: 500;
+                color: $title;
+            }
+            & > .donator-image {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
 </style>

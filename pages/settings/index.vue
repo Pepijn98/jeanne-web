@@ -45,28 +45,34 @@ import { ExtendedOptions } from "~/types/options.interfaces";
 export default class SettingsPage extends Vue {};
 </script>
 
-<style lang="sass" scoped>
-    @import "../../assets/sass/main.sass"
+<style lang="scss" scoped>
+    @import "../../assets/sass/main.sass";
 
-    .settings
-        display: flex
-        flex-wrap: wrap
-        justify-content: center
-        align-items: flex-start
-        & > .setting
-            width: 512px
-            margin: 10px
-            background-color: $background
-            & > .setting-title
-                & > .setting-name
-                    font-family: Exo, sans-serif
-                    font-weight: 500
-                    font-size: 20px
-                    color: $text
-                    width: 400px
-                    display: inline-block
-            & > .setting-description
-                font-size: 14px
-                & > .content
-                    color: $text
+    .settings {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        & > .setting {
+            width: 512px;
+            margin: 10px;
+            background-color: $background;
+            & > .setting-title {
+                & > .setting-name {
+                    font-family: Exo, sans-serif;
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: $text;
+                    width: 400px;
+                    display: inline-block;
+                }
+            }
+            & > .setting-description {
+                font-size: 14px;
+                & > .content {
+                    color: $text;
+                }
+            }
+        }
+    }
 </style>
