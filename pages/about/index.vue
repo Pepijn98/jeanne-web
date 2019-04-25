@@ -61,7 +61,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                     return this.$raven.captureException(error);
                 }
 
-                if (data.donators.length === 0) { // Check if donators is empty
+                if (data.donatorsData.length === 0) { // Check if donators is empty
                     const error = new Error("No donators were found");
                     this.$utils.alertError(error.message);
                     return this.$raven.captureException(error);
@@ -80,7 +80,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 }
 
                 // Developer stuff
-                const developerData = data.donators.find((obj) => obj.id === "93973697643155456");
+                const developerData = data.donatorsData.find((obj) => obj.id === "93973697643155456");
                 const developerName = document.createElement("p");
                 developerName.className = "developer-name";
                 developerName.innerHTML = `${developerData.username}<br/><small>Owner & Developer</small>`;
@@ -93,7 +93,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 developer.appendChild(developerImg);
 
                 // Donators stuff
-                const donatorsData = data.donators.filter((obj) => obj.id !== "93973697643155456");
+                const donatorsData = data.donatorsData.filter((obj) => obj.id !== "93973697643155456");
                 await this.$utils.foreachAsync(donatorsData, async (donator) => {
                     // Donator div
                     const donatorsDiv = document.createElement("div");

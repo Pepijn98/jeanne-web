@@ -56,14 +56,15 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             this.$nuxt.$loading.finish();
         });
 
-        const sawAlert = sessionStorage.getItem("sawAlert");
-        if (sawAlert !== "true")
-            this.$utils.snackbar({
-                message: "This website is in early alpha testing, expect alot of stuff to not work!",
-                type: "is-warning",
-                indefinite: true,
-                onAction: () => sessionStorage.setItem("sawAlert", "true")
-            });
+        // const sawAlert = sessionStorage.getItem("sawAlert");
+        // if (sawAlert !== "true") {
+        //     this.$utils.snackbar({
+        //         message: "This website is in early alpha testing, expect alot of stuff to not work!",
+        //         type: "is-warning",
+        //         indefinite: true,
+        //         onAction: () => sessionStorage.setItem("sawAlert", "true")
+        //     });
+        // }
     }
 })
 export default class Default extends Vue {};
