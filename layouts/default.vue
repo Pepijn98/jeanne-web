@@ -55,16 +55,6 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             await this.$utils.sleep(500);
             this.$nuxt.$loading.finish();
         });
-
-        // const sawAlert = sessionStorage.getItem("sawAlert");
-        // if (sawAlert !== "true") {
-        //     this.$utils.snackbar({
-        //         message: "This website is in early alpha testing, expect alot of stuff to not work!",
-        //         type: "is-warning",
-        //         indefinite: true,
-        //         onAction: () => sessionStorage.setItem("sawAlert", "true")
-        //     });
-        // }
     }
 })
 export default class Default extends Vue {};
@@ -124,7 +114,7 @@ export default class Default extends Vue {};
         .main {
             max-width: 1280px;
             border: 1px solid $dark;
-            margin: 1rem auto auto;
+            margin: 1rem auto 1.5rem;
             border-radius: 0;
             padding: 1rem 2rem;
             background-color: $background-light;
