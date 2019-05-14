@@ -30,15 +30,20 @@
             <a href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal" />&nbsp;</a>
             <a href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon" />&nbsp;</a>
         </footer>
+        <no-ssr placeholder="Loading...">
+            <cookie-law theme="blood-orange" ssr="false"></cookie-law>
+        </no-ssr>
     </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
+import CookieLaw from "vue-cookie-law";
 
-@Component(<ExtendedOptions>{
+@Component({
     name: "Default",
+    components: { CookieLaw },
     data() {
         return {
             title: "Default"
