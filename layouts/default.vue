@@ -25,7 +25,7 @@
         <footer>
             &copy; 2018 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br>
             <a href="https://github.com/KurozeroPB" target="_blank"><i class="fab fa-github" />&nbsp;</a>
-            <a href="https://twitter.com/Kurozero_" target="_blank"><i class="fab fa-twitter" />&nbsp;</a>
+            <a href="https://twitter.com/pvdbroek1998" target="_blank"><i class="fab fa-twitter" />&nbsp;</a>
             <a href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord" />&nbsp;</a>
             <a href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal" />&nbsp;</a>
             <a href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon" />&nbsp;</a>
