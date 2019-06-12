@@ -17,20 +17,15 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 
-@Component
-export default class SettingsPage extends Vue {
-    name: "Settings"
-    resource: "Settings"
-    settings: []
-    title: ""
-
+@Component({
+    name: "Settings",
+    resource: "Settings",
     data() {
         return {
             settings: [],
             title: "Settings"
         };
-    }
-
+    },
     head() {
         return {
             title: `Jeanne | ${this.title}`,
@@ -40,14 +35,14 @@ export default class SettingsPage extends Vue {
                 { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
             ]
         };
-    }
-
+    },
     async beforeMount() {
         await this.$utils.sleep(1);
         this.$store.commit("updateTitle", "Settings");
         this.settings = await this.$getResource("settings");
     }
-};
+} as ExtendedOptions)
+export default class SettingsPage extends Vue {};
 </script>
 
 <style lang="scss" scoped>

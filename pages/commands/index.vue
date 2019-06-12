@@ -58,18 +58,13 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 
 @Component({
+    name: "Commands",
+    resource: "Commands",
     computed: {
         commands() {
             return this.cmds.filter((cmd) => cmd.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0);
         }
-    }
-})
-export default class CommandsPage extends Vue {
-    name: "Commands"
-    resource: "Commands"
-    title: ""
-    cmds: []
-
+    },
     data() {
         return {
             search: "",
@@ -77,8 +72,7 @@ export default class CommandsPage extends Vue {
             title: "Commands",
             selected: null
         };
-    }
-
+    },
     head() {
         return {
             title: `Jeanne | ${this.title}`,
@@ -88,8 +82,7 @@ export default class CommandsPage extends Vue {
                 { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
             ]
         };
-    }
-
+    },
     async beforeMount() {
         await this.$utils.sleep(1);
         this.$store.commit("updateTitle", "Commands");
@@ -99,8 +92,7 @@ export default class CommandsPage extends Vue {
             if (a.name > b.name) return 1;
             return 0;
         });
-    }
-
+    },
     mounted() {
         const sawCommandAlert = localStorage.getItem("sawCommandAlert");
         if (sawCommandAlert !== "true") {
@@ -111,7 +103,8 @@ export default class CommandsPage extends Vue {
             });
         }
     }
-};
+} as ExtendedOptions)
+export default class CommandsPage extends Vue {};
 </script>
 
 <!--suppress SassScssUnresolvedVariable -->
