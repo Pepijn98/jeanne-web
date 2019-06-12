@@ -41,28 +41,28 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 import CookieLaw from "vue-cookie-law";
 
-@Component
-export default class Default extends Vue {
-    name: "Default"
-    components: { CookieLaw }
+@Component({
+    name: "Default",
+    components: { CookieLaw },
     data() {
         return {
             title: "Default"
         };
-    }
+    },
     beforeRouteEnter() {
         this.$nuxt.$loading.start();
-    }
+    },
     beforeRouteUpdate() {
         this.$nuxt.$loading.start();
-    }
+    },
     mounted() {
         this.$nextTick(async () => {
             await this.$utils.sleep(500);
             this.$nuxt.$loading.finish();
         });
     }
-};
+})
+export default class Default extends Vue {};
 </script>
 
 <!--suppress SassScssUnresolvedVariable -->

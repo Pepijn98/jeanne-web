@@ -95,13 +95,12 @@ import { ExtendedOptions } from "~/types/options.interfaces";
     },
     mounted() {
         const sawCommandAlert = localStorage.getItem("sawCommandAlert");
-        if (sawCommandAlert !== "true") {
+        if (sawCommandAlert !== "true")
             this.$utils.snackbar({
                 message: "Description for certain commands will be added later",
                 type: "is-danger",
                 onAction: () => localStorage.setItem("sawCommandAlert", "true")
             });
-        }
     }
 } as ExtendedOptions)
 export default class CommandsPage extends Vue {};

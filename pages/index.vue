@@ -36,18 +36,15 @@ interface SatisMeterConfig {
     traits?: Traits;
 }
 
-@Component
-export default class HomePage extends Vue {
-    name: "Home"
-    resource: "Features"
-    title: ""
-    features: []
+@Component(<ExtendedOptions>{
+    name: "Home",
+    resource: "Features",
     data() {
         return {
-            title: "Home",
-            features: []
+            features: [],
+            title: "Home"
         };
-    }
+    },
     head() {
         return {
             title: `Jeanne | ${this.title}`,
@@ -69,7 +66,7 @@ export default class HomePage extends Vue {
                 }
             ]
         };
-    }
+    },
     created() {
         // Inject satismeter script only on the homepage
         if (process.browser) {
@@ -95,7 +92,7 @@ export default class HomePage extends Vue {
             satismeter.innerHTML = `(function() { window.satismeter = window.satismeter || function() {(window.satismeter.q = window.satismeter.q || []).push(arguments);};window.satismeter.l = 1 * new Date();var script = document.createElement("script");var parent = document.getElementsByTagName("script")[0].parentNode;script.async = 1;script.src = "https://app.satismeter.com/satismeter.js";parent.appendChild(script);})(); satismeter(${JSON.stringify(config)});`;
             document.body.appendChild(satismeter);
         }
-    }
+    },
     async beforeMount() {
         await this.$utils.sleep(1);
         this.$store.commit("updateTitle", "Home");
@@ -107,7 +104,8 @@ export default class HomePage extends Vue {
             this.$utils.alertError(e.message);
         }
     }
-};
+})
+export default class HomePage extends Vue {};
 </script>
 
 <style lang="scss">
