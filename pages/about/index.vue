@@ -23,14 +23,18 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 
-@Component(<ExtendedOptions>{
-    name: "About",
-    resource: "About",
+@Component
+export default class AboutPage extends Vue {
+    name: "About"
+    resource: "About"
+    title: ""
+
     data() {
         return {
             title: "About"
         };
-    },
+    }
+
     head() {
         return {
             title: `Jeanne | ${this.title}`,
@@ -40,7 +44,8 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
             ]
         };
-    },
+    }
+
     async created() {
         if (process.browser) {
             const donators = document.getElementById("donators");
@@ -119,13 +124,13 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 this.$sentry.captureException(e);
             }
         }
-    },
+    }
+
     async beforeMount() {
         await this.$utils.sleep(1);
         this.$store.commit("updateTitle", "About");
     }
-})
-export default class AboutPage extends Vue {};
+};
 </script>
 
 <style lang="scss">

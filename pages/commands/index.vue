@@ -57,9 +57,19 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 
-@Component(<ExtendedOptions>{
-    name: "Commands",
-    resource: "Commands",
+@Component({
+    computed: {
+        commands() {
+            return this.cmds.filter((cmd) => cmd.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0);
+        }
+    }
+})
+export default class CommandsPage extends Vue {
+    name: "Commands"
+    resource: "Commands"
+    title: ""
+    cmds: []
+
     data() {
         return {
             search: "",
@@ -67,7 +77,8 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             title: "Commands",
             selected: null
         };
-    },
+    }
+
     head() {
         return {
             title: `Jeanne | ${this.title}`,
@@ -77,12 +88,8 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                 { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
             ]
         };
-    },
-    computed: {
-        commands() {
-            return this.cmds.filter((cmd) => cmd.name.toLowerCase().indexOf(this.search.toLowerCase()) >= 0);
-        }
-    },
+    }
+
     async beforeMount() {
         await this.$utils.sleep(1);
         this.$store.commit("updateTitle", "Commands");
@@ -92,18 +99,19 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             if (a.name > b.name) return 1;
             return 0;
         });
-    },
+    }
+
     mounted() {
         const sawCommandAlert = localStorage.getItem("sawCommandAlert");
-        if (sawCommandAlert !== "true")
+        if (sawCommandAlert !== "true") {
             this.$utils.snackbar({
                 message: "Description for certain commands will be added later",
                 type: "is-danger",
                 onAction: () => localStorage.setItem("sawCommandAlert", "true")
             });
+        }
     }
-})
-export default class CommandsPage extends Vue {};
+};
 </script>
 
 <!--suppress SassScssUnresolvedVariable -->
