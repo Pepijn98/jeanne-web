@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div id="app" v-if="isReady">
         <nav-bar />
         <vue-progress-bar />
         <div class="container">
@@ -46,7 +46,8 @@ import CookieLaw from "vue-cookie-law";
     components: { CookieLaw },
     data() {
         return {
-            title: "Default"
+            title: "Default",
+            isReady: false
         };
     },
     beforeRouteEnter() {
@@ -60,6 +61,8 @@ import CookieLaw from "vue-cookie-law";
             await this.$utils.sleep(500);
             this.$nuxt.$loading.finish();
         });
+
+        this.isReady = true;
     }
 })
 export default class Default extends Vue {};
