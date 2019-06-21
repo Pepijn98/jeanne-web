@@ -45,7 +45,6 @@ import { ExtendedOptions } from "~/types/options.interfaces";
         if (process.browser) {
             const donators = document.getElementById("donators");
             const developer = document.getElementById("developer");
-            console.log(developer);
             try {
                 const response = await this.$axios.get("https://api.kurozeropb.info/v1/donators");
                 if (this.$utils.isEmptyObject(response)) { // Check if the response is empty
