@@ -51,7 +51,7 @@ const nuxtConfig: NuxtConfiguration = {
         ],
         script: [
             // { defer: true, type: "text/javascript", innerHTML: "(function() { window.satismeter = window.satismeter || function() {(window.satismeter.q = window.satismeter.q || []).push(arguments);};window.satismeter.l = 1 * new Date();var script = document.createElement(\"script\");var parent = document.getElementsByTagName(\"script\")[0].parentNode;script.async = 1;script.src = \"https://app.satismeter.com/satismeter.js\";parent.appendChild(script);})(); satismeter({ writeKey: \"mdz26zo4FRZrjbkS\" });" }
-            { defer: true, type: "text/javascript", src: "/anti-adblock.js" }
+            { defer: true, type: "text/javascript", src: "/js/anti-adblock.js" }
         ],
         noscript: [
             { innerHTML: "This website requires JavaScript." }
