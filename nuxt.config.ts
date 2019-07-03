@@ -50,6 +50,7 @@ const nuxtConfig: NuxtConfiguration = {
             { rel: "mask-icon", href: "/head-icons/android-chrome-512x512.jpg", color: "#7A202C" }
         ],
         script: [
+            { type: "text/javascript", src: "https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js" },
             { defer: true, type: "text/javascript", src: "/js/anti-adblock.js" }
         ],
         noscript: [

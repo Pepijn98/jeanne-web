@@ -63,6 +63,12 @@ import CookieLaw from "vue-cookie-law";
         });
 
         this.isReady = true;
+
+        // Doesn't really make a good darkmode
+        // if (process.browser) {
+        //     // @ts-ignore
+        //     new Darkmode().showWidget();
+        // }
     }
 })
 export default class Default extends Vue {};

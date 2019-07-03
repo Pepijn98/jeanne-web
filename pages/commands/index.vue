@@ -136,7 +136,7 @@ export default class CommandsPage extends Vue {};
             margin: 10px;
             background-color: $background;
             & > .cmd-title {
-                box-shadow: 0 1px 2px $primary;
+                box-shadow: 0 1px 2px rgba(10, 10, 10, .1);
                 & > .cmd-name {
                     font-family: Exo, sans-serif;
                     font-weight: 500;
@@ -163,7 +163,7 @@ export default class CommandsPage extends Vue {};
                 & > a > span > .example {
                     background-color: transparent;
                     color: $text;
-                    border: 1px solid $text;
+                    border: 1px solid rgba(10, 10, 10, .1);
                     font-size: 1rem;
                     padding: calc(0.375em - 1px) calc(0.625em - 1px);
                 }
