@@ -163,7 +163,7 @@ export default class CommandsPage extends Vue {};
                 & > a > span > .example {
                     background-color: transparent;
                     color: $text;
-                    border: 1px solid rgba(10, 10, 10, .1);
+                    border: 1px solid $text;
                     font-size: 1rem;
                     padding: calc(0.375em - 1px) calc(0.625em - 1px);
                 }
@@ -175,7 +175,7 @@ export default class CommandsPage extends Vue {};
                 }
             }
             & > .cmd-details {
-                border-top: 1px solid $primary;
+                border-top: 1px solid rgba(10, 10, 10, .1);
                 font-size: 14px;
                 & > .cmd-details-item {
                     color: $text;
