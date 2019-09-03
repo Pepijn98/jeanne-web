@@ -17,10 +17,10 @@ const nuxtConfig: NuxtConfiguration = {
             { hid: "twitter-image", name: "twitter:image", content: "https://jeannebot.info/avatar.jpg" },
             { hid: "twitter-creator", name: "twitter:creator", content: "@Kurozer0" },
             { hid: "og-title", property: "og:title", content: "Jeanne" },
-            { hid: "og-url", property: "og:url", content: "https://jeannebot.info" },
-            { hid: "og-image", property: "og:image", content: "https://jeannebot.info/avatar.jpg" },
+            { hid: "og-url", property: "og:url", content: "https://kurozeropb.github.io/Jeanne" },
+            { hid: "og-image", property: "og:image", content: "https://kurozeropb.github.io/Jeanne/avatar.jpg" },
             { hid: "og-type", property: "og:type", content: "website" },
-            { hid: "og-site_name", property: "og:site_name", content: "jeannebot.info" },
+            { hid: "og-site_name", property: "og:site_name", content: "kurozeropb.github.io/Jeanne" },
             { hid: "og-description", property: "og:description", content: "Jeanne, A feature rich discord bot." },
             { hid: "og-locale", property: "og:locale", content: "en-US" },
             { hid: "application-name", property: "application-name", content: "Jeanne" },
@@ -31,23 +31,23 @@ const nuxtConfig: NuxtConfiguration = {
         link: [
             { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css", integrity: "sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ", crossorigin: "anonymous" },
             { rel: "stylesheet", href: "//cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css" },
-            { rel: "icon", type: "image/x-icon", href: "/head-icons/favicon.ico" },
-            { rel: "apple-touch-icon-precomposed", sizes: "57x57", href: "/head-icons/apple-touch-icon-57x57.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "/head-icons/apple-touch-icon-114x114.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "/head-icons/apple-touch-icon-72x72.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "/head-icons/apple-touch-icon-144x144.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "60x60", href: "/head-icons/apple-touch-icon-60x60.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "120x120", href: "/head-icons/apple-touch-icon-120x120.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "76x76", href: "/head-icons/apple-touch-icon-76x76.png" },
-            { rel: "apple-touch-icon-precomposed", sizes: "152x152", href: "/head-icons/apple-touch-icon-152x152.png" },
-            { rel: "icon", type: "image/png", href: "/head-icons/favicon-196x196.png" },
-            { rel: "icon", type: "image/png", href: "/head-icons/favicon-96x96.png" },
-            { rel: "icon", type: "image/png", href: "/head-icons/favicon-32x32.png" },
-            { rel: "icon", type: "image/png", href: "/head-icons/favicon-16x16.png" },
-            { rel: "icon", type: "image/png", href: "/head-icons/favicon-128.png" },
-            { rel: "manifest", href: "/head-icons/manifest.json" },
-            { rel: "shortcut icon", href: "/head-icons/favicon.ico" },
-            { rel: "mask-icon", href: "/head-icons/android-chrome-512x512.jpg", color: "#7A202C" }
+            { rel: "icon", type: "image/x-icon", href: "/Jeanne/head-icons/favicon.ico" },
+            { rel: "apple-touch-icon-precomposed", sizes: "57x57", href: "/Jeanne/head-icons/apple-touch-icon-57x57.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "/Jeanne/head-icons/apple-touch-icon-114x114.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "72x72", href: "/Jeanne/head-icons/apple-touch-icon-72x72.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "144x144", href: "/Jeanne/head-icons/apple-touch-icon-144x144.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "60x60", href: "/Jeanne/head-icons/apple-touch-icon-60x60.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "120x120", href: "/Jeanne/head-icons/apple-touch-icon-120x120.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "76x76", href: "/Jeanne/head-icons/apple-touch-icon-76x76.png" },
+            { rel: "apple-touch-icon-precomposed", sizes: "152x152", href: "/Jeanne/head-icons/apple-touch-icon-152x152.png" },
+            { rel: "icon", type: "image/png", href: "/Jeanne/head-icons/favicon-196x196.png" },
+            { rel: "icon", type: "image/png", href: "/Jeanne/head-icons/favicon-96x96.png" },
+            { rel: "icon", type: "image/png", href: "/Jeanne/head-icons/favicon-32x32.png" },
+            { rel: "icon", type: "image/png", href: "/Jeanne/head-icons/favicon-16x16.png" },
+            { rel: "icon", type: "image/png", href: "/Jeanne/head-icons/favicon-128.png" },
+            { rel: "manifest", href: "/Jeanne/head-icons/manifest.json" },
+            { rel: "shortcut icon", href: "/Jeanne/head-icons/favicon.ico" },
+            { rel: "mask-icon", href: "/Jeanne/head-icons/android-chrome-512x512.jpg", color: "#7A202C" }
         ],
         script: [
             { type: "text/javascript", src: "https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js" },
@@ -81,7 +81,7 @@ const nuxtConfig: NuxtConfiguration = {
         config: { release: settings.version }
     },
     sitemap: {
-        hostname: "https://jeannebot.info",
+        hostname: "https://kurozeropb.github.io/Jeanne",
         gzip: true,
         defaults: {
             changefreq: "daily",
@@ -89,6 +89,9 @@ const nuxtConfig: NuxtConfiguration = {
             lastmod: new Date(),
             lastmodrealtime: true
         }
+    },
+    router: {
+        base: "/Jeanne/"
     },
     build: {
         extend(config, { isDev, isClient }) {
