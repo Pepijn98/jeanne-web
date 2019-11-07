@@ -29,7 +29,7 @@
             </div> -->
         </div>
         <footer>
-            &copy; 2018 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br>
+            &copy; 2020 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br>
             <a href="https://github.com/KurozeroPB" target="_blank"><i class="fab fa-github" />&nbsp;</a>
             <a href="https://twitter.com/pvdbroek98" target="_blank"><i class="fab fa-twitter" />&nbsp;</a>
             <a href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord" />&nbsp;</a>
@@ -69,12 +69,6 @@ import CookieLaw from "vue-cookie-law";
         });
 
         this.isReady = true;
-
-        // Doesn't really make a good darkmode
-        // if (process.browser) {
-        //     // @ts-ignore
-        //     new Darkmode().showWidget();
-        // }
     }
 })
 export default class Default extends Vue {};

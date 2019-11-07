@@ -15,7 +15,7 @@ const nuxtConfig: NuxtConfiguration = {
             { hid: "twitter-title", name: "twitter:title", content: "Jeanne" },
             { hid: "twitter-description", name: "twitter:description", content: "Jeanne, A feature rich discord bot" },
             { hid: "twitter-image", name: "twitter:image", content: "https://jeannebot.com/avatar.jpg" },
-            { hid: "twitter-creator", name: "twitter:creator", content: "@Kurozer0" },
+            { hid: "twitter-creator", name: "twitter:creator", content: "@pvdbroek98" },
             { hid: "og-title", property: "og:title", content: "Jeanne" },
             { hid: "og-url", property: "og:url", content: "https://jeannebot.com" },
             { hid: "og-image", property: "og:image", content: "https://jeannebot.com/avatar.jpg" },
@@ -29,8 +29,8 @@ const nuxtConfig: NuxtConfiguration = {
             { hid: "msapplication-config", property: "msapplication-config", content: "https://kurozeropb.info/head-icons/browserconfig.xml" }
         ],
         link: [
-            { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.2.0/css/all.css", integrity: "sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ", crossorigin: "anonymous" },
-            { rel: "stylesheet", href: "//cdn.materialdesignicons.com/2.3.54/css/materialdesignicons.min.css" },
+            { rel: "stylesheet", href: "https://use.fontawesome.com/releases/v5.11.2/css/all.css" },
+            { rel: "stylesheet", href: "https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css" },
             { rel: "icon", type: "image/x-icon", href: "/head-icons/favicon.ico" },
             { rel: "apple-touch-icon-precomposed", sizes: "57x57", href: "/head-icons/apple-touch-icon-57x57.png" },
             { rel: "apple-touch-icon-precomposed", sizes: "114x114", href: "/head-icons/apple-touch-icon-114x114.png" },
@@ -50,8 +50,7 @@ const nuxtConfig: NuxtConfiguration = {
             { rel: "mask-icon", href: "/head-icons/android-chrome-512x512.jpg", color: "#7A202C" }
         ],
         script: [
-            { type: "text/javascript", src: "https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js" },
-            { defer: true, type: "text/javascript", src: "/js/anti-adblock.js" }
+            { type: "text/javascript", src: "/js/anti-adblock.js" }
         ],
         noscript: [
             { innerHTML: "This website requires JavaScript." }
@@ -90,9 +89,6 @@ const nuxtConfig: NuxtConfiguration = {
             lastmodrealtime: true
         }
     },
-    // router: {
-    //     base: "/Jeanne/"
-    // },
     build: {
         extend(config, { isDev, isClient }) {
             if (isDev && isClient)

@@ -1,6 +1,6 @@
 {
     "name": "jeanne-web",
-    "version": "2.1.1",
+    "version": "2.2.0",
     "description": "Website for my discord bot Jeanne",
     "license": "MIT",
     "private": false,
@@ -25,7 +25,9 @@
         "generate": "nuxt generate",
         "lint": "eslint --ext .ts,.js,.vue .",
         "lint:fix": "eslint --ext .ts,.js,.vue --fix .",
-        "precommit": "yarn lint"
+        "precommit": "yarn lint",
+        "clean": "rm -rf ./node_modules",
+        "reinstall": "yarn clean && yarn install"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.5.4",
