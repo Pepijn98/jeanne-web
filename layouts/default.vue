@@ -3,9 +3,9 @@
         <nav-bar />
         <vue-progress-bar />
         <div class="container">
-            <!-- <div class="ads">
+            <div class="ads">
                 <adsbygoogle ad-slot="5372000314" />
-            </div> -->
+            </div>
             <div class="header">
                 <img class="avatar" src="../assets/images/avatar.jpg">
                 <span class="h-title">Jeanne | <vue-typer
@@ -24,9 +24,9 @@
             <div class="main">
                 <nuxt />
             </div>
-            <!-- <div class="ads">
+            <div class="ads">
                 <adsbygoogle ad-slot="5372000314" />
-            </div> -->
+            </div>
         </div>
         <footer>
             &copy; 2020 — <a href="https://kurozeropb.info"><strong>Kurozero</strong></a> | Made with <a href="https://vuejs.org/" target="_blank">Vuejs</a> and <a href="https://buefy.github.io/" target="_blank">Buefy</a>.<br>
