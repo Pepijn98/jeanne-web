@@ -1,26 +1,30 @@
 <template>
-    <div>
-        <div slot="left-pane" class="about">
-            <p class="about-title">About</p>
-            <p class="links">
-                <b><a class="github" href="https://github.com/KurozeroPB/Jeanne" target="_blank"><i class="fab fa-github" />&nbsp;View Code on Github</a></b><br>
-                <b><a class="twitter" href="https://twitter.com/JeanneDiscord" target="_blank"><i class="fab fa-twitter" />&nbsp;Follow on Twitter</a></b><br>
-                <b><a class="discord" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord" />&nbsp;Official Discord server</a></b><br>
-                <b><a class="paypal" href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal" />&nbsp;Support using PayPal</a></b><br>
-                <b><a class="patreon" href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon" />&nbsp;Support using Patreon</a></b><br>
-            </p>
-            <div id="developer" class="developer" />
-        </div>
-        <hr class="divider">
-        <div slot="right-pane">
-            <p class="donators-title">Donators</p>
-            <div id="donators" class="donators" />
-        </div>
+  <div>
+    <div slot="left-pane" class="about">
+      <p class="about-title">
+        About
+      </p>
+      <p class="links">
+        <b><a class="github" href="https://github.com/KurozeroPB/Jeanne" target="_blank"><i class="fab fa-github" />&nbsp;View Code on Github</a></b><br>
+        <b><a class="twitter" href="https://twitter.com/JeanneDiscord" target="_blank"><i class="fab fa-twitter" />&nbsp;Follow on Twitter</a></b><br>
+        <b><a class="discord" href="https://discord.gg/p895czC" target="_blank"><i class="fab fa-discord" />&nbsp;Official Discord server</a></b><br>
+        <b><a class="paypal" href="https://www.paypal.me/PvdBroek" target="_blank"><i class="fab fa-paypal" />&nbsp;Support using PayPal</a></b><br>
+        <b><a class="patreon" href="https://www.patreon.com/Kurozero" target="_blank"><i class="fab fa-patreon" />&nbsp;Support using Patreon</a></b><br>
+      </p>
+      <div id="developer" class="developer" />
     </div>
+    <hr class="divider">
+    <div slot="right-pane">
+      <p class="donators-title">
+        Donators
+      </p>
+      <div id="donators" class="donators" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { ExtendedOptions } from "~/types/options.interfaces";
 
 @Component({
@@ -36,7 +40,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             title: `Jeanne | ${this.title}`,
             meta: [
                 { hid: "og-title", property: "og:title", content: `Jeanne | ${this.title}` },
-                { hid: "og-url", property: "og:url", content: `https://jeannebot.info/${this.title.toLowerCase()}` },
+                { hid: "og-url", property: "og:url", content: `https://jeannebot.com/${this.title.toLowerCase()}` },
                 { hid: "twitter-title", name: "twitter:title", content: `Jeanne | ${this.title}` }
             ]
         };
@@ -46,7 +50,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
             const donators = document.getElementById("donators");
             const developer = document.getElementById("developer");
             try {
-                const response = await this.$axios.get("https://api.kurozeropb.info/v1/donators");
+                const response = await this.$axios.get("https://kurozeropb.info/api/jeanne/donators");
                 if (this.$utils.isEmptyObject(response)) { // Check if the response is empty
                     const error = new Error("Got an empty response from the server");
                     this.$utils.alertError(error.message);
@@ -115,6 +119,7 @@ import { ExtendedOptions } from "~/types/options.interfaces";
                     donators.appendChild(donatorsDiv);
                 });
             } catch (e) {
+                console.error(e);
                 this.$utils.alertError(e.message);
                 this.$sentry.captureException(e);
             }

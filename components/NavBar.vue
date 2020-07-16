@@ -21,7 +21,7 @@
                         <a class="navbar-item is-size-5-desktop" href="/commands/"><i class="fas fa-list-ul"><span>&nbsp;Commands</span></i></a>
                         <a class="navbar-item is-size-5-desktop" href="/about/"><i class="fas fa-info-circle"><span>&nbsp;About</span></i></a>
                         <a class="navbar-item is-size-5-desktop" href="https://discordapp.com/oauth2/authorize?&client_id=237578660708745216&scope=bot&permissions=66186303" target="_blank"><i class="fas fa-external-link-alt"><span>&nbsp;Invite</span></i></a>
-                        <a v-if="!token" class="navbar-item is-size-5-desktop" href="https://api.kurozeropb.info/v1/discord/login"><i class="fas fa-sign-in-alt"><span>&nbsp;Login</span></i></a>
+                        <a v-if="!token" class="navbar-item is-size-5-desktop" href="https://kurozeropb.info/api/v1/discord/login"><i class="fas fa-sign-in-alt"><span>&nbsp;Login</span></i></a>
                         <a v-else class="navbar-item is-size-5-desktop" @click="logout"><i class="fas fa-sign-out-alt"><span>&nbsp;Logout</span></i></a>
                         <!-- <a class="navbar-item is-size-5-desktop" @click="notAvailable"><i class="fas fa-sign-in-alt"><span>&nbsp;Login</span></i></a> -->
                     </div>

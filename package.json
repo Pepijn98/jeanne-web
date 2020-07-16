@@ -21,13 +21,13 @@
         "dev": "nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
-        "prestart": "yarn build",
+        "prestart": "npm run build",
         "generate": "nuxt generate",
         "lint": "eslint --ext .ts,.js,.vue .",
         "lint:fix": "eslint --ext .ts,.js,.vue --fix .",
-        "precommit": "yarn lint",
+        "precommit": "npm run lint",
         "clean": "rm -rf ./node_modules",
-        "reinstall": "yarn clean && yarn install"
+        "reinstall": "npm run clean && npm run install"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.5.4",
